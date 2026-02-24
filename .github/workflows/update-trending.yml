@@ -32,7 +32,6 @@ jobs:
           python scripts/generate_site.py -i trending.json -o docs
       
       - name: Sync to Feishu Bitable
-        if: ${{ secrets.FEISHU_APP_ID != '' }}
         env:
           FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
           FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
