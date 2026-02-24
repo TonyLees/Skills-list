@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub AI Agent/Skill 热门项目</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #646cff;
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+        
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .repo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .repo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        
+        .repo-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .repo-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .repo-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .repo-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .repo-name a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        
+        .repo-name a:hover {
+            text-decoration: underline;
+        }
+        
+        .repo-owner {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .repo-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .repo-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .repo-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .stars { color: #f1e05a; }
+        .forks { color: var(--accent-blue); }
+        .issues { color: var(--accent-green); }
+        
+        .repo-topics {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .topic {
+            padding: 0.2rem 0.6rem;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent-blue);
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+        
+        .language-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.25rem;
+        }
+        
+        .lang-javascript { background: #f1e05a; }
+        .lang-python { background: #3572A5; }
+        .lang-typescript { background: #2b7489; }
+        .lang-go { background: #00ADD8; }
+        .lang-rust { background: #dea584; }
+        .lang-java { background: #b07219; }
+        .lang-cpp { background: #f34b7d; }
+        .lang-ruby { background: #701516; }
+        .lang-default { background: var(--text-secondary); }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            header h1 { font-size: 1.8rem; }
+            .repo-grid { grid-template-columns: 1fr; }
+            .stats { gap: 1rem; }
+            .stat-value { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 GitHub AI Agent/Skill 热门项目</h1>
+            <p>每日自动更新，发现最热门的AI智能体和技能项目</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value">50</div>
+                    <div class="stat-label">项目总数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2,726,802</div>
+                    <div class="stat-label">累计 Stars</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2026-02-22 03:56</div>
+                    <div class="stat-label">更新时间</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索项目名称、描述或主题...">
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+            <button class="filter-btn" data-filter="typescript">TypeScript</button>
+            <button class="filter-btn" data-filter="go">Go</button>
+            <button class="filter-btn" data-filter="rust">Rust</button>
+        </div>
+        
+        <div class="repo-grid" id="repoGrid">
+            
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/252820863?v=4" alt="openclaw">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/openclaw/openclaw" target="_blank">openclaw</a>
+                </h3>
+                <div class="repo-owner">by openclaw</div>
+            </div>
+        </div>
+        <p class="repo-desc">Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 </p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 216.6k</span>
+            <span class="forks">🍴 40.8k</span>
+            <span class="issues">❗ 9.0k</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">assistant</span><span class="topic">crustacean</span><span class="topic">molty</span><span class="topic">openclaw</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/130738209?v=4" alt="Significant-Gravitas">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank">AutoGPT</a>
+                </h3>
+                <div class="repo-owner">by Significant-Gravitas</div>
+            </div>
+        </div>
+        <p class="repo-desc">AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 181.9k</span>
+            <span class="forks">🍴 46.2k</span>
+            <span class="issues">❗ 352</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">artificial-intelligence</span><span class="topic">autonomous-agents</span><span class="topic">gpt-4</span><span class="topic">llama-api</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/85702467?v=4" alt="langflow-ai">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/langflow-ai/langflow" target="_blank">langflow</a>
+                </h3>
+                <div class="repo-owner">by langflow-ai</div>
+            </div>
+        </div>
+        <p class="repo-desc">Langflow is a powerful tool for building and deploying AI-powered agents and workflows.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 145.0k</span>
+            <span class="forks">🍴 8.5k</span>
+            <span class="issues">❗ 1.0k</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agents</span><span class="topic">chatgpt</span><span class="topic">generative-ai</span><span class="topic">large-language-models</span><span class="topic">multiagent</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="None">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/185671340?v=4" alt="x1xhlol">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank">system-prompts-and-models-of-ai-tools</a>
+                </h3>
+                <div class="repo-owner">by x1xhlol</div>
+            </div>
+        </div>
+        <p class="repo-desc">FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 115.8k</span>
+            <span class="forks">🍴 29.9k</span>
+            <span class="issues">❗ 119</span>
+            
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">bolt</span><span class="topic">cluely</span><span class="topic">copilot</span><span class="topic">cursor</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/31396011?v=4" alt="Shubhamsaboo">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank">awesome-llm-apps</a>
+                </h3>
+                <div class="repo-owner">by Shubhamsaboo</div>
+            </div>
+        </div>
+        <p class="repo-desc">Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 96.5k</span>
+            <span class="forks">🍴 14.0k</span>
+            <span class="issues">❗ 5</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agents</span><span class="topic">llms</span><span class="topic">python</span><span class="topic">rag</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/161781182?v=4" alt="google-gemini">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/google-gemini/gemini-cli" target="_blank">gemini-cli</a>
+                </h3>
+                <div class="repo-owner">by google-gemini</div>
+            </div>
+        </div>
+        <p class="repo-desc">An open-source AI agent that brings the power of Gemini directly into your terminal.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 95.2k</span>
+            <span class="forks">🍴 11.5k</span>
+            <span class="issues">❗ 2.1k</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">ai-agents</span><span class="topic">cli</span><span class="topic">gemini</span><span class="topic">gemini-api</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/153288546?v=4" alt="ChatGPTNextWeb">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/ChatGPTNextWeb/NextChat" target="_blank">NextChat</a>
+                </h3>
+                <div class="repo-owner">by ChatGPTNextWeb</div>
+            </div>
+        </div>
+        <p class="repo-desc">✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 87.3k</span>
+            <span class="forks">🍴 60.3k</span>
+            <span class="issues">❗ 789</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">calclaude</span><span class="topic">chatgpt</span><span class="topic">claude</span><span class="topic">cross-platform</span><span class="topic">desktop</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/192012301?v=4" alt="browser-use">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/browser-use/browser-use" target="_blank">browser-use</a>
+                </h3>
+                <div class="repo-owner">by browser-use</div>
+            </div>
+        </div>
+        <p class="repo-desc">🌐 Make websites accessible for AI agents. Automate tasks online with ease.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 78.7k</span>
+            <span class="forks">🍴 9.3k</span>
+            <span class="issues">❗ 258</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai-agents</span><span class="topic">ai-tools</span><span class="topic">browser-automation</span><span class="topic">browser-use</span><span class="topic">llm</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/69962740?v=4" alt="infiniflow">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/infiniflow/ragflow" target="_blank">ragflow</a>
+                </h3>
+                <div class="repo-owner">by infiniflow</div>
+            </div>
+        </div>
+        <p class="repo-desc">RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 73.5k</span>
+            <span class="forks">🍴 8.2k</span>
+            <span class="issues">❗ 3.0k</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">agentic</span><span class="topic">agentic-ai</span><span class="topic">agentic-workflow</span><span class="topic">ai</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="MDX">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/30384625?v=4" alt="dair-ai">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">Prompt-Engineering-Guide</a>
+                </h3>
+                <div class="repo-owner">by dair-ai</div>
+            </div>
+        </div>
+        <p class="repo-desc">🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 70.6k</span>
+            <span class="forks">🍴 7.5k</span>
+            <span class="issues">❗ 244</span>
+            <span><span class="language-dot lang-default"></span>MDX</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">agents</span><span class="topic">ai-agents</span><span class="topic">chatgpt</span><span class="topic">deep-learning</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/198047230?v=4" alt="FoundationAgents">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/FoundationAgents/MetaGPT" target="_blank">MetaGPT</a>
+                </h3>
+                <div class="repo-owner">by FoundationAgents</div>
+            </div>
+        </div>
+        <p class="repo-desc">🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 64.3k</span>
+            <span class="forks">🍴 8.1k</span>
+            <span class="issues">❗ 82</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">gpt</span><span class="topic">llm</span><span class="topic">metagpt</span><span class="topic">multi-agent</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/80064875?v=4" alt="OpenBB-finance">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/OpenBB-finance/OpenBB" target="_blank">OpenBB</a>
+                </h3>
+                <div class="repo-owner">by OpenBB-finance</div>
+            </div>
+        </div>
+        <p class="repo-desc">Financial data platform for analysts, quants and AI agents.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 60.7k</span>
+            <span class="forks">🍴 5.9k</span>
+            <span class="issues">❗ 60</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">crypto</span><span class="topic">derivatives</span><span class="topic">economics</span><span class="topic">equity</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/184127137?v=4" alt="cline">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/cline/cline" target="_blank">cline</a>
+                </h3>
+                <div class="repo-owner">by cline</div>
+            </div>
+        </div>
+        <p class="repo-desc">Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 58.2k</span>
+            <span class="forks">🍴 5.8k</span>
+            <span class="issues">❗ 744</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        
+    </div>
+    
+    <div class="repo-card" data-language="Shell">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/45416?v=4" alt="obra">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/obra/superpowers" target="_blank">superpowers</a>
+                </h3>
+                <div class="repo-owner">by obra</div>
+            </div>
+        </div>
+        <p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 57.1k</span>
+            <span class="forks">🍴 4.3k</span>
+            <span class="issues">❗ 141</span>
+            <span><span class="language-dot lang-default"></span>Shell</span>
+        </div>
+        
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/4467025?v=4" alt="AntonOsika">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/AntonOsika/gpt-engineer" target="_blank">gpt-engineer</a>
+                </h3>
+                <div class="repo-owner">by AntonOsika</div>
+            </div>
+        </div>
+        <p class="repo-desc">CLI platform to experiment with codegen. Precursor to: https://lovable.dev</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 55.2k</span>
+            <span class="forks">🍴 7.3k</span>
+            <span class="issues">❗ 66</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">autonomous-agent</span><span class="topic">code-generation</span><span class="topic">codebase-generation</span><span class="topic">codegen</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="JavaScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/134426827?v=4" alt="Mintplex-Labs">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank">anything-llm</a>
+                </h3>
+                <div class="repo-owner">by Mintplex-Labs</div>
+            </div>
+        </div>
+        <p class="repo-desc">The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 54.8k</span>
+            <span class="forks">🍴 5.9k</span>
+            <span class="issues">❗ 279</span>
+            <span><span class="language-dot lang-javascript"></span>JavaScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai-agents</span><span class="topic">custom-ai-agents</span><span class="topic">deepseek</span><span class="topic">kimi</span><span class="topic">llama3</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="microsoft">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/microsoft/autogen" target="_blank">autogen</a>
+                </h3>
+                <div class="repo-owner">by microsoft</div>
+            </div>
+        </div>
+        <p class="repo-desc">A programming framework for agentic AI</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 54.7k</span>
+            <span class="forks">🍴 8.2k</span>
+            <span class="issues">❗ 599</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agentic</span><span class="topic">agentic-agi</span><span class="topic">agents</span><span class="topic">ai</span><span class="topic">autogen</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/97503431?v=4" alt="opendatalab">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/opendatalab/MinerU" target="_blank">MinerU</a>
+                </h3>
+                <div class="repo-owner">by opendatalab</div>
+            </div>
+        </div>
+        <p class="repo-desc">Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 54.6k</span>
+            <span class="forks">🍴 4.5k</span>
+            <span class="issues">❗ 183</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai4science</span><span class="topic">document-analysis</span><span class="topic">extract-data</span><span class="topic">layout-analysis</span><span class="topic">ocr</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Jupyter Notebook">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="microsoft">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">ai-agents-for-beginners</a>
+                </h3>
+                <div class="repo-owner">by microsoft</div>
+            </div>
+        </div>
+        <p class="repo-desc">12 Lessons to Get Started Building AI Agents</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 50.9k</span>
+            <span class="forks">🍴 17.8k</span>
+            <span class="issues">❗ 9</span>
+            <span><span class="language-dot lang-default"></span>Jupyter Notebook</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agentic-ai</span><span class="topic">agentic-framework</span><span class="topic">agentic-rag</span><span class="topic">ai-agents</span><span class="topic">ai-agents-framework</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/128289781?v=4" alt="FlowiseAI">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/FlowiseAI/Flowise" target="_blank">Flowise</a>
+                </h3>
+                <div class="repo-owner">by FlowiseAI</div>
+            </div>
+        </div>
+        <p class="repo-desc">Build AI Agents, Visually</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 49.3k</span>
+            <span class="forks">🍴 23.7k</span>
+            <span class="issues">❗ 822</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agentic-ai</span><span class="topic">agentic-workflow</span><span class="topic">agents</span><span class="topic">artificial-intelligence</span><span class="topic">chatbot</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="JavaScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/124439313?v=4" alt="affaan-m">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/affaan-m/everything-claude-code" target="_blank">everything-claude-code</a>
+                </h3>
+                <div class="repo-owner">by affaan-m</div>
+            </div>
+        </div>
+        <p class="repo-desc">Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs. Battle-tested configs from an Anthropic hackathon winner.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 49.1k</span>
+            <span class="forks">🍴 6.1k</span>
+            <span class="issues">❗ 21</span>
+            <span><span class="language-dot lang-javascript"></span>JavaScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai-agents</span><span class="topic">anthropic</span><span class="topic">claude</span><span class="topic">claude-code</span><span class="topic">developer-tools</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/137054526?v=4" alt="mem0ai">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/mem0ai/mem0" target="_blank">mem0</a>
+                </h3>
+                <div class="repo-owner">by mem0ai</div>
+            </div>
+        </div>
+        <p class="repo-desc">Universal memory layer for AI Agents</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 47.7k</span>
+            <span class="forks">🍴 5.3k</span>
+            <span class="issues">❗ 771</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agents</span><span class="topic">ai</span><span class="topic">ai-agents</span><span class="topic">application</span><span class="topic">chatbots</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/170677839?v=4" alt="crewAIInc">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/crewAIInc/crewAI" target="_blank">crewAI</a>
+                </h3>
+                <div class="repo-owner">by crewAIInc</div>
+            </div>
+        </div>
+        <p class="repo-desc">Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 44.4k</span>
+            <span class="forks">🍴 6.0k</span>
+            <span class="issues">❗ 308</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agents</span><span class="topic">ai</span><span class="topic">ai-agents</span><span class="topic">aiagentframework</span><span class="topic">llms</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/26161723?v=4" alt="zhayujie">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/zhayujie/chatgpt-on-wechat" target="_blank">chatgpt-on-wechat</a>
+                </h3>
+                <div class="repo-owner">by zhayujie</div>
+            </div>
+        </div>
+        <p class="repo-desc">CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 41.4k</span>
+            <span class="forks">🍴 9.7k</span>
+            <span class="issues">❗ 348</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">ai-agent</span><span class="topic">chatgpt</span><span class="topic">claude</span><span class="topic">deepseek</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/187777663?v=4" alt="CherryHQ">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/CherryHQ/cherry-studio" target="_blank">cherry-studio</a>
+                </h3>
+                <div class="repo-owner">by CherryHQ</div>
+            </div>
+        </div>
+        <p class="repo-desc">AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 40.0k</span>
+            <span class="forks">🍴 3.7k</span>
+            <span class="issues">❗ 633</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai-agent</span><span class="topic">claude-code</span><span class="topic">code-agent</span><span class="topic">codex</span><span class="topic">openclaw</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/164844019?v=4" alt="2noise">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/2noise/ChatTTS" target="_blank">ChatTTS</a>
+                </h3>
+                <div class="repo-owner">by 2noise</div>
+            </div>
+        </div>
+        <p class="repo-desc">A generative speech model for daily dialogue.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 38.7k</span>
+            <span class="forks">🍴 4.2k</span>
+            <span class="issues">❗ 61</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">chat</span><span class="topic">chatgpt</span><span class="topic">chattts</span><span class="topic">chinese</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="microsoft">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/microsoft/qlib" target="_blank">qlib</a>
+                </h3>
+                <div class="repo-owner">by microsoft</div>
+            </div>
+        </div>
+        <p class="repo-desc">Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 37.7k</span>
+            <span class="forks">🍴 5.8k</span>
+            <span class="issues">❗ 352</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">algorithmic-trading</span><span class="topic">auto-quant</span><span class="topic">deep-learning</span><span class="topic">finance</span><span class="topic">fintech</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="JavaScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/82193554?v=4" alt="ToolJet">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/ToolJet/ToolJet" target="_blank">ToolJet</a>
+                </h3>
+                <div class="repo-owner">by ToolJet</div>
+            </div>
+        </div>
+        <p class="repo-desc">ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 37.5k</span>
+            <span class="forks">🍴 5.0k</span>
+            <span class="issues">❗ 956</span>
+            <span><span class="language-dot lang-javascript"></span>JavaScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai-app-builder</span><span class="topic">docker</span><span class="topic">hacktoberfest</span><span class="topic">internal-applications</span><span class="topic">internal-project</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/139558948?v=4" alt="chatchat-space">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/chatchat-space/Langchain-Chatchat" target="_blank">Langchain-Chatchat</a>
+                </h3>
+                <div class="repo-owner">by chatchat-space</div>
+            </div>
+        </div>
+        <p class="repo-desc">Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain </p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 37.3k</span>
+            <span class="forks">🍴 6.1k</span>
+            <span class="issues">❗ 25</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">chatbot</span><span class="topic">chatchat</span><span class="topic">chatglm</span><span class="topic">chatgpt</span><span class="topic">embedding</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/128464815?v=4" alt="ComposioHQ">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">awesome-claude-skills</a>
+                </h3>
+                <div class="repo-owner">by ComposioHQ</div>
+            </div>
+        </div>
+        <p class="repo-desc">A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 36.5k</span>
+            <span class="forks">🍴 3.6k</span>
+            <span class="issues">❗ 188</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent-skills</span><span class="topic">ai-agents</span><span class="topic">antigravity</span><span class="topic">automation</span><span class="topic">claude</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/120154269?v=4" alt="reworkd">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/reworkd/AgentGPT" target="_blank">AgentGPT</a>
+                </h3>
+                <div class="repo-owner">by reworkd</div>
+            </div>
+        </div>
+        <p class="repo-desc">🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 35.7k</span>
+            <span class="forks">🍴 9.5k</span>
+            <span class="issues">❗ 220</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">agentgpt</span><span class="topic">agents</span><span class="topic">agi</span><span class="topic">ai</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/110395318?v=4" alt="666ghj">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/666ghj/BettaFish" target="_blank">BettaFish</a>
+                </h3>
+                <div class="repo-owner">by 666ghj</div>
+            </div>
+        </div>
+        <p class="repo-desc">微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 35.7k</span>
+            <span class="forks">🍴 6.8k</span>
+            <span class="issues">❗ 27</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent-framework</span><span class="topic">data-analysis</span><span class="topic">deep-research</span><span class="topic">deep-search</span><span class="topic">llms</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/110412045?v=4" alt="danny-avila">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/danny-avila/LibreChat" target="_blank">LibreChat</a>
+                </h3>
+                <div class="repo-owner">by danny-avila</div>
+            </div>
+        </div>
+        <p class="repo-desc">Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 34.0k</span>
+            <span class="forks">🍴 6.9k</span>
+            <span class="issues">❗ 421</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">anthropic</span><span class="topic">artifacts</span><span class="topic">aws</span><span class="topic">azure</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Go">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/109613420?v=4" alt="1Panel-dev">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/1Panel-dev/1Panel" target="_blank">1Panel</a>
+                </h3>
+                <div class="repo-owner">by 1Panel-dev</div>
+            </div>
+        </div>
+        <p class="repo-desc">🔥 1Panel offers an intuitive web interface for a Linux server / VPS, making it easy to manage OpenClaw agents, local LLMs, websites, databases, containers, files, and scheduled tasks.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 33.5k</span>
+            <span class="forks">🍴 3.0k</span>
+            <span class="issues">❗ 402</span>
+            <span><span class="language-dot lang-go"></span>Go</span>
+        </div>
+        <div class="repo-topics"><span class="topic">1panel</span><span class="topic">agent</span><span class="topic">clawdbot</span><span class="topic">docker</span><span class="topic">docker-ui</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/246974152?v=4" alt="nextlevelbuilder">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank">ui-ux-pro-max-skill</a>
+                </h3>
+                <div class="repo-owner">by nextlevelbuilder</div>
+            </div>
+        </div>
+        <p class="repo-desc">An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 33.3k</span>
+            <span class="forks">🍴 3.3k</span>
+            <span class="issues">❗ 55</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai-skills</span><span class="topic">antigravity</span><span class="topic">claude</span><span class="topic">claude-code</span><span class="topic">codex</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Rust">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/125617854?v=4" alt="TabbyML">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/TabbyML/tabby" target="_blank">tabby</a>
+                </h3>
+                <div class="repo-owner">by TabbyML</div>
+            </div>
+        </div>
+        <p class="repo-desc">Self-hosted AI coding assistant</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 32.9k</span>
+            <span class="forks">🍴 1.7k</span>
+            <span class="issues">❗ 291</span>
+            <span><span class="language-dot lang-rust"></span>Rust</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">codegen</span><span class="topic">coding-assistant</span><span class="topic">coding-language</span><span class="topic">developer-experience</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/134046886?v=4" alt="khoj-ai">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/khoj-ai/khoj" target="_blank">khoj</a>
+                </h3>
+                <div class="repo-owner">by khoj-ai</div>
+            </div>
+        </div>
+        <p class="repo-desc">Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 32.6k</span>
+            <span class="forks">🍴 2.0k</span>
+            <span class="issues">❗ 93</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">ai</span><span class="topic">assistant</span><span class="topic">chat</span><span class="topic">chatgpt</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/60330232?v=4" alt="PostHog">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/PostHog/posthog" target="_blank">posthog</a>
+                </h3>
+                <div class="repo-owner">by PostHog</div>
+            </div>
+        </div>
+        <p class="repo-desc">🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 31.7k</span>
+            <span class="forks">🍴 2.3k</span>
+            <span class="issues">❗ 3.1k</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ab-testing</span><span class="topic">ai-analytics</span><span class="topic">analytics</span><span class="topic">cdp</span><span class="topic">data-warehouse</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/89920203?v=4" alt="OpenBMB">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/OpenBMB/ChatDev" target="_blank">ChatDev</a>
+                </h3>
+                <div class="repo-owner">by OpenBMB</div>
+            </div>
+        </div>
+        <p class="repo-desc">ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 31.1k</span>
+            <span class="forks">🍴 3.8k</span>
+            <span class="issues">❗ 40</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        
+    </div>
+    
+    <div class="repo-card" data-language="Rust">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/185116535?v=4" alt="block">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/block/goose" target="_blank">goose</a>
+                </h3>
+                <div class="repo-owner">by block</div>
+            </div>
+        </div>
+        <p class="repo-desc">an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 30.9k</span>
+            <span class="forks">🍴 2.8k</span>
+            <span class="issues">❗ 321</span>
+            <span><span class="language-dot lang-rust"></span>Rust</span>
+        </div>
+        <div class="repo-topics"><span class="topic">mcp</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Jupyter Notebook">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/38653995?v=4" alt="patchy631">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/patchy631/ai-engineering-hub" target="_blank">ai-engineering-hub</a>
+                </h3>
+                <div class="repo-owner">by patchy631</div>
+            </div>
+        </div>
+        <p class="repo-desc">In-depth tutorials on LLMs, RAGs and real-world AI agent applications.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 30.4k</span>
+            <span class="forks">🍴 4.9k</span>
+            <span class="issues">❗ 124</span>
+            <span><span class="language-dot lang-default"></span>Jupyter Notebook</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agents</span><span class="topic">ai</span><span class="topic">llms</span><span class="topic">machine-learning</span><span class="topic">mcp</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/192884433?v=4" alt="TauricResearch">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/TauricResearch/TradingAgents" target="_blank">TradingAgents</a>
+                </h3>
+                <div class="repo-owner">by TauricResearch</div>
+            </div>
+        </div>
+        <p class="repo-desc">TradingAgents: Multi-Agents LLM Financial Trading Framework</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 30.3k</span>
+            <span class="forks">🍴 5.8k</span>
+            <span class="issues">❗ 235</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">finance</span><span class="topic">llm</span><span class="topic">multiagent</span><span class="topic">trading</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/131273140?v=4" alt="CopilotKit">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/CopilotKit/CopilotKit" target="_blank">CopilotKit</a>
+                </h3>
+                <div class="repo-owner">by CopilotKit</div>
+            </div>
+        </div>
+        <p class="repo-desc">The Frontend for Agents & Generative UI. React + Angular</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 28.9k</span>
+            <span class="forks">🍴 3.8k</span>
+            <span class="issues">❗ 568</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">agent-native</span><span class="topic">agentic-ai</span><span class="topic">agents</span><span class="topic">ai</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="None">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/129434473?v=4" alt="e2b-dev">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/e2b-dev/awesome-ai-agents" target="_blank">awesome-ai-agents</a>
+                </h3>
+                <div class="repo-owner">by e2b-dev</div>
+            </div>
+        </div>
+        <p class="repo-desc">A list of AI autonomous agents</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 25.9k</span>
+            <span class="forks">🍴 2.3k</span>
+            <span class="issues">❗ 181</span>
+            
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">ai</span><span class="topic">artificial-intelligence</span><span class="topic">autogpt</span><span class="topic">autonomous-agents</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/13554167?v=4" alt="assafelovic">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/assafelovic/gpt-researcher" target="_blank">gpt-researcher</a>
+                </h3>
+                <div class="repo-owner">by assafelovic</div>
+            </div>
+        </div>
+        <p class="repo-desc">An autonomous agent that conducts deep research on any data using any LLM providers.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 25.4k</span>
+            <span class="forks">🍴 3.4k</span>
+            <span class="issues">❗ 177</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">ai</span><span class="topic">automation</span><span class="topic">deepresearch</span><span class="topic">llms</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/49105846?v=4" alt="Fosowl">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/Fosowl/agenticSeek" target="_blank">agenticSeek</a>
+                </h3>
+                <div class="repo-owner">by Fosowl</div>
+            </div>
+        </div>
+        <p class="repo-desc">Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 25.1k</span>
+            <span class="forks">🍴 2.8k</span>
+            <span class="issues">❗ 40</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agentic-ai</span><span class="topic">agents</span><span class="topic">ai</span><span class="topic">autonomous-agents</span><span class="topic">deepseek-r1</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="TypeScript">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/203414896?v=4" alt="Fission-AI">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/Fission-AI/OpenSpec" target="_blank">OpenSpec</a>
+                </h3>
+                <div class="repo-owner">by Fission-AI</div>
+            </div>
+        </div>
+        <p class="repo-desc">Spec-driven development (SDD) for AI coding assistants.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 25.0k</span>
+            <span class="forks">🍴 1.7k</span>
+            <span class="issues">❗ 231</span>
+            <span><span class="language-dot lang-typescript"></span>TypeScript</span>
+        </div>
+        <div class="repo-topics"><span class="topic">ai</span><span class="topic">context-engineering</span><span class="topic">engineering</span><span class="topic">planning</span><span class="topic">prd</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Python">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/172150522?v=4" alt="hesreallyhim">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank">awesome-claude-code</a>
+                </h3>
+                <div class="repo-owner">by hesreallyhim</div>
+            </div>
+        </div>
+        <p class="repo-desc">A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 24.5k</span>
+            <span class="forks">🍴 1.5k</span>
+            <span class="issues">❗ 123</span>
+            <span><span class="language-dot lang-python"></span>Python</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent-skills</span><span class="topic">agentic-code</span><span class="topic">agentic-coding</span><span class="topic">ai-workflow-optimization</span><span class="topic">ai-workflows</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="Go">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/63276650?v=4" alt="flipped-aurora">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/flipped-aurora/gin-vue-admin" target="_blank">gin-vue-admin</a>
+                </h3>
+                <div class="repo-owner">by flipped-aurora</div>
+            </div>
+        </div>
+        <p class="repo-desc">🚀Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，内置mcp辅助服务，内置skills管理，支持TS和JS混用。它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能。</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 24.3k</span>
+            <span class="forks">🍴 7.0k</span>
+            <span class="issues">❗ 38</span>
+            <span><span class="language-dot lang-go"></span>Go</span>
+        </div>
+        <div class="repo-topics"><span class="topic">admin</span><span class="topic">ai</span><span class="topic">casbin</span><span class="topic">element-ui</span><span class="topic">gin</span></div>
+    </div>
+    
+    <div class="repo-card" data-language="MDX">
+        <div class="repo-header">
+            <img class="repo-avatar" src="https://avatars.githubusercontent.com/u/51827949?v=4" alt="deepset-ai">
+            <div class="repo-info">
+                <h3 class="repo-name">
+                    <a href="https://github.com/deepset-ai/haystack" target="_blank">haystack</a>
+                </h3>
+                <div class="repo-owner">by deepset-ai</div>
+            </div>
+        </div>
+        <p class="repo-desc">Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.</p>
+        <div class="repo-meta">
+            <span class="stars">⭐ 24.3k</span>
+            <span class="forks">🍴 2.6k</span>
+            <span class="issues">❗ 109</span>
+            <span><span class="language-dot lang-default"></span>MDX</span>
+        </div>
+        <div class="repo-topics"><span class="topic">agent</span><span class="topic">agents</span><span class="topic">ai</span><span class="topic">gemini</span><span class="topic">generative-ai</span></div>
+    </div>
+    
+        </div>
+        
+        <div class="no-results" id="noResults" style="display: none;">
+            没有找到匹配的项目
+        </div>
+    </div>
+    
+    <footer>
+        <p>数据来源: GitHub API | 自动更新: GitHub Actions</p>
+        <p>由 Trae AI Skill 生成</p>
+    </footer>
+    
+    <script>
+        const repos = [{"id": 1103012935, "name": "openclaw", "full_name": "openclaw/openclaw", "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ", "html_url": "https://github.com/openclaw/openclaw", "stargazers_count": 216587, "forks_count": 40822, "open_issues_count": 8955, "watchers_count": 216587, "language": "TypeScript", "topics": ["ai", "assistant", "crustacean", "molty", "openclaw", "own-your-data", "personal"], "created_at": "2025-11-24T10:16:47Z", "updated_at": "2026-02-22T03:56:31Z", "pushed_at": "2026-02-22T03:55:26Z", "owner": {"login": "openclaw", "avatar_url": "https://avatars.githubusercontent.com/u/252820863?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://openclaw.ai", "archived": false, "fork": false}, {"id": 614765452, "name": "AutoGPT", "full_name": "Significant-Gravitas/AutoGPT", "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.", "html_url": "https://github.com/Significant-Gravitas/AutoGPT", "stargazers_count": 181926, "forks_count": 46227, "open_issues_count": 352, "watchers_count": 181926, "language": "Python", "topics": ["ai", "artificial-intelligence", "autonomous-agents", "gpt-4", "llama-api", "openai", "python"], "created_at": "2023-03-16T09:21:07Z", "updated_at": "2026-02-22T03:05:35Z", "pushed_at": "2026-02-22T00:33:57Z", "owner": {"login": "Significant-Gravitas", "avatar_url": "https://avatars.githubusercontent.com/u/130738209?v=4", "type": "Organization"}, "license": "NOASSERTION", "homepage": "https://agpt.co", "archived": false, "fork": false}, {"id": 599320067, "name": "langflow", "full_name": "langflow-ai/langflow", "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.", "html_url": "https://github.com/langflow-ai/langflow", "stargazers_count": 144951, "forks_count": 8475, "open_issues_count": 1042, "watchers_count": 144951, "language": "Python", "topics": ["agents", "chatgpt", "generative-ai", "large-language-models", "multiagent", "react-flow"], "created_at": "2023-02-08T22:28:03Z", "updated_at": "2026-02-22T02:21:09Z", "pushed_at": "2026-02-22T00:39:49Z", "owner": {"login": "langflow-ai", "avatar_url": "https://avatars.githubusercontent.com/u/85702467?v=4", "type": "Organization"}, "license": "MIT", "homepage": "http://www.langflow.org", "archived": false, "fork": false}, {"id": 943398999, "name": "system-prompts-and-models-of-ai-tools", "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools", "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models", "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools", "stargazers_count": 115846, "forks_count": 29889, "open_issues_count": 119, "watchers_count": 115846, "language": null, "topics": ["ai", "bolt", "cluely", "copilot", "cursor", "cursorai", "devin", "github-copilot", "lovable", "open-source", "perplexity", "replit", "system-prompts", "trae", "trae-ai", "trae-ide", "v0", "vscode", "windsurf", "windsurf-ai"], "created_at": "2025-03-05T16:38:29Z", "updated_at": "2026-02-22T03:55:37Z", "pushed_at": "2026-02-17T11:22:32Z", "owner": {"login": "x1xhlol", "avatar_url": "https://avatars.githubusercontent.com/u/185671340?v=4", "type": "User"}, "license": "GPL-3.0", "homepage": "", "archived": false, "fork": false}, {"id": 793375104, "name": "awesome-llm-apps", "full_name": "Shubhamsaboo/awesome-llm-apps", "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.", "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps", "stargazers_count": 96466, "forks_count": 14015, "open_issues_count": 5, "watchers_count": 96466, "language": "Python", "topics": ["agents", "llms", "python", "rag"], "created_at": "2024-04-29T05:30:25Z", "updated_at": "2026-02-22T03:55:53Z", "pushed_at": "2026-02-17T06:48:56Z", "owner": {"login": "Shubhamsaboo", "avatar_url": "https://avatars.githubusercontent.com/u/31396011?v=4", "type": "User"}, "license": "Apache-2.0", "homepage": "https://www.theunwindai.com", "archived": false, "fork": false}, {"id": 968197216, "name": "gemini-cli", "full_name": "google-gemini/gemini-cli", "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.", "html_url": "https://github.com/google-gemini/gemini-cli", "stargazers_count": 95218, "forks_count": 11459, "open_issues_count": 2142, "watchers_count": 95218, "language": "TypeScript", "topics": ["ai", "ai-agents", "cli", "gemini", "gemini-api", "mcp-client", "mcp-server"], "created_at": "2025-04-17T17:04:31Z", "updated_at": "2026-02-22T03:36:49Z", "pushed_at": "2026-02-22T01:54:12Z", "owner": {"login": "google-gemini", "avatar_url": "https://avatars.githubusercontent.com/u/161781182?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://geminicli.com", "archived": false, "fork": false}, {"id": 612344730, "name": "NextChat", "full_name": "ChatGPTNextWeb/NextChat", "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows", "html_url": "https://github.com/ChatGPTNextWeb/NextChat", "stargazers_count": 87335, "forks_count": 60338, "open_issues_count": 789, "watchers_count": 87335, "language": "TypeScript", "topics": ["calclaude", "chatgpt", "claude", "cross-platform", "desktop", "fe", "gemini", "gemini-pro", "gemini-server", "gemini-ultra", "gpt-4o", "groq", "nextjs", "ollama", "react", "tauri", "tauri-app", "vercel", "webui"], "created_at": "2023-03-10T18:27:54Z", "updated_at": "2026-02-22T00:44:48Z", "pushed_at": "2025-12-02T17:05:02Z", "owner": {"login": "ChatGPTNextWeb", "avatar_url": "https://avatars.githubusercontent.com/u/153288546?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://nextchat.club", "archived": false, "fork": false}, {"id": 881458615, "name": "browser-use", "full_name": "browser-use/browser-use", "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.", "html_url": "https://github.com/browser-use/browser-use", "stargazers_count": 78696, "forks_count": 9315, "open_issues_count": 258, "watchers_count": 78696, "language": "Python", "topics": ["ai-agents", "ai-tools", "browser-automation", "browser-use", "llm", "playwright", "python"], "created_at": "2024-10-31T16:00:56Z", "updated_at": "2026-02-22T03:45:09Z", "pushed_at": "2026-02-22T03:45:58Z", "owner": {"login": "browser-use", "avatar_url": "https://avatars.githubusercontent.com/u/192012301?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://browser-use.com", "archived": false, "fork": false}, {"id": 730534580, "name": "ragflow", "full_name": "infiniflow/ragflow", "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs", "html_url": "https://github.com/infiniflow/ragflow", "stargazers_count": 73505, "forks_count": 8152, "open_issues_count": 2994, "watchers_count": 73505, "language": "Python", "topics": ["agent", "agentic", "agentic-ai", "agentic-workflow", "ai", "ai-search", "context-engineering", "context-retrieval", "deep-research", "deepseek", "deepseek-r1", "document-parser", "document-understanding", "graphrag", "llm", "mcp", "ollama", "openai", "rag", "retrieval-augmented-generation"], "created_at": "2023-12-12T06:13:13Z", "updated_at": "2026-02-22T03:09:47Z", "pushed_at": "2026-02-14T13:21:16Z", "owner": {"login": "infiniflow", "avatar_url": "https://avatars.githubusercontent.com/u/69962740?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://ragflow.io", "archived": false, "fork": false}, {"id": 579082810, "name": "Prompt-Engineering-Guide", "full_name": "dair-ai/Prompt-Engineering-Guide", "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.", "html_url": "https://github.com/dair-ai/Prompt-Engineering-Guide", "stargazers_count": 70642, "forks_count": 7530, "open_issues_count": 244, "watchers_count": 70642, "language": "MDX", "topics": ["agent", "agents", "ai-agents", "chatgpt", "deep-learning", "generative-ai", "language-model", "llms", "openai", "prompt-engineering", "rag"], "created_at": "2022-12-16T16:04:50Z", "updated_at": "2026-02-22T02:44:29Z", "pushed_at": "2026-02-01T21:11:28Z", "owner": {"login": "dair-ai", "avatar_url": "https://avatars.githubusercontent.com/u/30384625?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://www.promptingguide.ai/", "archived": false, "fork": false}, {"id": 660551251, "name": "MetaGPT", "full_name": "FoundationAgents/MetaGPT", "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming", "html_url": "https://github.com/FoundationAgents/MetaGPT", "stargazers_count": 64348, "forks_count": 8088, "open_issues_count": 82, "watchers_count": 64348, "language": "Python", "topics": ["agent", "gpt", "llm", "metagpt", "multi-agent"], "created_at": "2023-06-30T09:04:55Z", "updated_at": "2026-02-22T03:39:09Z", "pushed_at": "2026-01-21T10:12:33Z", "owner": {"login": "FoundationAgents", "avatar_url": "https://avatars.githubusercontent.com/u/198047230?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://mgx.dev/", "archived": false, "fork": false}, {"id": 323048702, "name": "OpenBB", "full_name": "OpenBB-finance/OpenBB", "description": "Financial data platform for analysts, quants and AI agents.", "html_url": "https://github.com/OpenBB-finance/OpenBB", "stargazers_count": 60668, "forks_count": 5927, "open_issues_count": 60, "watchers_count": 60668, "language": "Python", "topics": ["ai", "crypto", "derivatives", "economics", "equity", "finance", "fixed-income", "machine-learning", "openbb", "options", "python", "quantitative-finance", "stocks"], "created_at": "2020-12-20T10:46:38Z", "updated_at": "2026-02-22T03:54:03Z", "pushed_at": "2026-02-22T02:02:43Z", "owner": {"login": "OpenBB-finance", "avatar_url": "https://avatars.githubusercontent.com/u/80064875?v=4", "type": "Organization"}, "license": "NOASSERTION", "homepage": "https://openbb.co", "archived": false, "fork": false}, {"id": 824874689, "name": "cline", "full_name": "cline/cline", "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.", "html_url": "https://github.com/cline/cline", "stargazers_count": 58222, "forks_count": 5812, "open_issues_count": 744, "watchers_count": 58222, "language": "TypeScript", "topics": [], "created_at": "2024-07-06T07:28:10Z", "updated_at": "2026-02-22T03:49:31Z", "pushed_at": "2026-02-21T23:35:53Z", "owner": {"login": "cline", "avatar_url": "https://avatars.githubusercontent.com/u/184127137?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev", "archived": false, "fork": false}, {"id": 1073224795, "name": "superpowers", "full_name": "obra/superpowers", "description": "An agentic skills framework & software development methodology that works.", "html_url": "https://github.com/obra/superpowers", "stargazers_count": 57102, "forks_count": 4328, "open_issues_count": 141, "watchers_count": 57102, "language": "Shell", "topics": [], "created_at": "2025-10-09T19:45:18Z", "updated_at": "2026-02-22T03:55:07Z", "pushed_at": "2026-02-21T19:43:05Z", "owner": {"login": "obra", "avatar_url": "https://avatars.githubusercontent.com/u/45416?v=4", "type": "User"}, "license": "MIT", "homepage": "", "archived": false, "fork": false}, {"id": 634224458, "name": "gpt-engineer", "full_name": "AntonOsika/gpt-engineer", "description": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev", "html_url": "https://github.com/AntonOsika/gpt-engineer", "stargazers_count": 55202, "forks_count": 7323, "open_issues_count": 66, "watchers_count": 55202, "language": "Python", "topics": ["ai", "autonomous-agent", "code-generation", "codebase-generation", "codegen", "coding-assistant", "gpt-4", "gpt-engineer", "openai", "python"], "created_at": "2023-04-29T12:52:15Z", "updated_at": "2026-02-21T17:48:45Z", "pushed_at": "2025-05-14T10:15:10Z", "owner": {"login": "AntonOsika", "avatar_url": "https://avatars.githubusercontent.com/u/4467025?v=4", "type": "User"}, "license": "MIT", "homepage": "", "archived": false, "fork": false}, {"id": 649170660, "name": "anything-llm", "full_name": "Mintplex-Labs/anything-llm", "description": "The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.", "html_url": "https://github.com/Mintplex-Labs/anything-llm", "stargazers_count": 54831, "forks_count": 5902, "open_issues_count": 279, "watchers_count": 54831, "language": "JavaScript", "topics": ["ai-agents", "custom-ai-agents", "deepseek", "kimi", "llama3", "llm", "lmstudio", "local-llm", "localai", "mcp", "mcp-servers", "moonshot", "multimodal", "no-code", "ollama", "qwen3", "rag", "vector-database", "web-scraping"], "created_at": "2023-06-04T02:29:14Z", "updated_at": "2026-02-22T03:55:53Z", "pushed_at": "2026-02-21T02:00:17Z", "owner": {"login": "Mintplex-Labs", "avatar_url": "https://avatars.githubusercontent.com/u/134426827?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://anythingllm.com", "archived": false, "fork": false}, {"id": 680120071, "name": "autogen", "full_name": "microsoft/autogen", "description": "A programming framework for agentic AI", "html_url": "https://github.com/microsoft/autogen", "stargazers_count": 54701, "forks_count": 8234, "open_issues_count": 599, "watchers_count": 54701, "language": "Python", "topics": ["agentic", "agentic-agi", "agents", "ai", "autogen", "autogen-ecosystem", "chatgpt", "framework", "llm-agent", "llm-framework"], "created_at": "2023-08-18T11:43:45Z", "updated_at": "2026-02-22T03:40:03Z", "pushed_at": "2026-01-22T16:27:56Z", "owner": {"login": "microsoft", "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4", "type": "Organization"}, "license": "CC-BY-4.0", "homepage": "https://microsoft.github.io/autogen/", "archived": false, "fork": false}, {"id": 765083837, "name": "MinerU", "full_name": "opendatalab/MinerU", "description": "Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.", "html_url": "https://github.com/opendatalab/MinerU", "stargazers_count": 54604, "forks_count": 4530, "open_issues_count": 183, "watchers_count": 54604, "language": "Python", "topics": ["ai4science", "document-analysis", "extract-data", "layout-analysis", "ocr", "parser", "pdf", "pdf-converter", "pdf-extractor-llm", "pdf-extractor-pretrain", "pdf-extractor-rag", "pdf-parser", "python"], "created_at": "2024-02-29T08:52:34Z", "updated_at": "2026-02-22T03:35:15Z", "pushed_at": "2026-02-09T09:45:11Z", "owner": {"login": "opendatalab", "avatar_url": "https://avatars.githubusercontent.com/u/97503431?v=4", "type": "Organization"}, "license": "AGPL-3.0", "homepage": "https://opendatalab.github.io/MinerU/", "archived": false, "fork": false}, {"id": 895508656, "name": "ai-agents-for-beginners", "full_name": "microsoft/ai-agents-for-beginners", "description": "12 Lessons to Get Started Building AI Agents", "html_url": "https://github.com/microsoft/ai-agents-for-beginners", "stargazers_count": 50899, "forks_count": 17846, "open_issues_count": 9, "watchers_count": 50899, "language": "Jupyter Notebook", "topics": ["agentic-ai", "agentic-framework", "agentic-rag", "ai-agents", "ai-agents-framework", "autogen", "generative-ai", "semantic-kernel"], "created_at": "2024-11-28T10:42:52Z", "updated_at": "2026-02-22T03:52:15Z", "pushed_at": "2026-02-20T10:16:16Z", "owner": {"login": "microsoft", "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://aka.ms/ai-agents-beginners", "archived": false, "fork": false}, {"id": 621803253, "name": "Flowise", "full_name": "FlowiseAI/Flowise", "description": "Build AI Agents, Visually", "html_url": "https://github.com/FlowiseAI/Flowise", "stargazers_count": 49256, "forks_count": 23735, "open_issues_count": 822, "watchers_count": 49256, "language": "TypeScript", "topics": ["agentic-ai", "agentic-workflow", "agents", "artificial-intelligence", "chatbot", "chatgpt", "javascript", "langchain", "large-language-models", "low-code", "multiagent-systems", "no-code", "openai", "rag", "react", "typescript", "workflow-automation"], "created_at": "2023-03-31T12:23:09Z", "updated_at": "2026-02-22T03:02:52Z", "pushed_at": "2026-02-21T01:17:48Z", "owner": {"login": "FlowiseAI", "avatar_url": "https://avatars.githubusercontent.com/u/128289781?v=4", "type": "Organization"}, "license": "NOASSERTION", "homepage": "https://flowiseai.com", "archived": false, "fork": false}, {"id": 1136590548, "name": "everything-claude-code", "full_name": "affaan-m/everything-claude-code", "description": "Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs. Battle-tested configs from an Anthropic hackathon winner.", "html_url": "https://github.com/affaan-m/everything-claude-code", "stargazers_count": 49141, "forks_count": 6097, "open_issues_count": 21, "watchers_count": 49141, "language": "JavaScript", "topics": ["ai-agents", "anthropic", "claude", "claude-code", "developer-tools", "llm", "mcp", "productivity"], "created_at": "2026-01-18T00:51:51Z", "updated_at": "2026-02-22T03:53:35Z", "pushed_at": "2026-02-22T00:04:40Z", "owner": {"login": "affaan-m", "avatar_url": "https://avatars.githubusercontent.com/u/124439313?v=4", "type": "User"}, "license": "MIT", "homepage": null, "archived": false, "fork": false}, {"id": 656099147, "name": "mem0", "full_name": "mem0ai/mem0", "description": "Universal memory layer for AI Agents", "html_url": "https://github.com/mem0ai/mem0", "stargazers_count": 47746, "forks_count": 5299, "open_issues_count": 771, "watchers_count": 47746, "language": "Python", "topics": ["agents", "ai", "ai-agents", "application", "chatbots", "chatgpt", "genai", "llm", "long-term-memory", "memory", "memory-management", "python", "rag", "state-management"], "created_at": "2023-06-20T08:58:36Z", "updated_at": "2026-02-22T03:31:21Z", "pushed_at": "2026-02-20T00:42:46Z", "owner": {"login": "mem0ai", "avatar_url": "https://avatars.githubusercontent.com/u/137054526?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://mem0.ai", "archived": false, "fork": false}, {"id": 710601088, "name": "crewAI", "full_name": "crewAIInc/crewAI", "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.", "html_url": "https://github.com/crewAIInc/crewAI", "stargazers_count": 44415, "forks_count": 5957, "open_issues_count": 308, "watchers_count": 44415, "language": "Python", "topics": ["agents", "ai", "ai-agents", "aiagentframework", "llms"], "created_at": "2023-10-27T03:26:59Z", "updated_at": "2026-02-22T03:44:57Z", "pushed_at": "2026-02-21T12:31:02Z", "owner": {"login": "crewAIInc", "avatar_url": "https://avatars.githubusercontent.com/u/170677839?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://crewai.com", "archived": false, "fork": false}, {"id": 522158088, "name": "chatgpt-on-wechat", "full_name": "zhayujie/chatgpt-on-wechat", "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企业微信应用、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。", "html_url": "https://github.com/zhayujie/chatgpt-on-wechat", "stargazers_count": 41355, "forks_count": 9745, "open_issues_count": 348, "watchers_count": 41355, "language": "Python", "topics": ["ai", "ai-agent", "chatgpt", "claude", "deepseek", "dingtalk", "feishu-bot", "gemini", "kimi", "linkai", "llm", "mcp", "multi-agent", "openai", "openclaw", "python3", "qwen", "skills", "wechat"], "created_at": "2022-08-07T08:33:41Z", "updated_at": "2026-02-22T03:45:24Z", "pushed_at": "2026-02-21T03:34:05Z", "owner": {"login": "zhayujie", "avatar_url": "https://avatars.githubusercontent.com/u/26161723?v=4", "type": "User"}, "license": "MIT", "homepage": "https://link-ai.tech", "archived": false, "fork": false}, {"id": 805155266, "name": "cherry-studio", "full_name": "CherryHQ/cherry-studio", "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs", "html_url": "https://github.com/CherryHQ/cherry-studio", "stargazers_count": 40011, "forks_count": 3686, "open_issues_count": 633, "watchers_count": 40011, "language": "TypeScript", "topics": ["ai-agent", "claude-code", "code-agent", "codex", "openclaw", "opencode", "shannon", "skills", "superpowers", "superpowers-core-skills", "vibe-coding"], "created_at": "2024-05-24T01:56:26Z", "updated_at": "2026-02-22T03:50:25Z", "pushed_at": "2026-02-21T06:41:02Z", "owner": {"login": "CherryHQ", "avatar_url": "https://avatars.githubusercontent.com/u/187777663?v=4", "type": "Organization"}, "license": "AGPL-3.0", "homepage": "https://cherry-ai.com", "archived": false, "fork": false}, {"id": 806709826, "name": "ChatTTS", "full_name": "2noise/ChatTTS", "description": "A generative speech model for daily dialogue.", "html_url": "https://github.com/2noise/ChatTTS", "stargazers_count": 38742, "forks_count": 4211, "open_issues_count": 61, "watchers_count": 38742, "language": "Python", "topics": ["agent", "chat", "chatgpt", "chattts", "chinese", "chinese-language", "english", "english-language", "gpt", "llm", "llm-agent", "natural-language-inference", "python", "text-to-speech", "torch", "torchaudio", "tts"], "created_at": "2024-05-27T18:26:49Z", "updated_at": "2026-02-22T02:05:09Z", "pushed_at": "2026-01-18T05:30:01Z", "owner": {"login": "2noise", "avatar_url": "https://avatars.githubusercontent.com/u/164844019?v=4", "type": "Organization"}, "license": "AGPL-3.0", "homepage": "https://2noise.com", "archived": false, "fork": false}, {"id": 287463830, "name": "qlib", "full_name": "microsoft/qlib", "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.", "html_url": "https://github.com/microsoft/qlib", "stargazers_count": 37665, "forks_count": 5848, "open_issues_count": 352, "watchers_count": 37665, "language": "Python", "topics": ["algorithmic-trading", "auto-quant", "deep-learning", "finance", "fintech", "investment", "machine-learning", "paper", "platform", "python", "quant", "quant-dataset", "quant-models", "quantitative-finance", "quantitative-trading", "research", "research-paper", "stock-data"], "created_at": "2020-08-14T06:46:00Z", "updated_at": "2026-02-22T02:36:12Z", "pushed_at": "2026-02-12T13:07:19Z", "owner": {"login": "microsoft", "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://qlib.readthedocs.io/en/latest/", "archived": false, "fork": false}, {"id": 352933140, "name": "ToolJet", "full_name": "ToolJet/ToolJet", "description": "ToolJet is the open-source foundation of ToolJet AI - the AI-native platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀", "html_url": "https://github.com/ToolJet/ToolJet", "stargazers_count": 37459, "forks_count": 4951, "open_issues_count": 956, "watchers_count": 37459, "language": "JavaScript", "topics": ["ai-app-builder", "docker", "hacktoberfest", "internal-applications", "internal-project", "internal-tool", "internal-tools", "javascript", "kubernetes", "low-code", "low-code-development-platform", "low-code-framework", "no-code", "nodejs", "reactjs", "self-hosted", "typescript", "web-development-tools", "workflow-automation"], "created_at": "2021-03-30T08:51:34Z", "updated_at": "2026-02-22T02:40:38Z", "pushed_at": "2026-02-21T14:01:45Z", "owner": {"login": "ToolJet", "avatar_url": "https://avatars.githubusercontent.com/u/82193554?v=4", "type": "Organization"}, "license": "AGPL-3.0", "homepage": "https://tooljet.com", "archived": false, "fork": false}, {"id": 621799276, "name": "Langchain-Chatchat", "full_name": "chatchat-space/Langchain-Chatchat", "description": "Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain ", "html_url": "https://github.com/chatchat-space/Langchain-Chatchat", "stargazers_count": 37306, "forks_count": 6140, "open_issues_count": 25, "watchers_count": 37306, "language": "Python", "topics": ["chatbot", "chatchat", "chatglm", "chatgpt", "embedding", "faiss", "fastchat", "gpt", "knowledge-base", "langchain", "langchain-chatglm", "llama", "llm", "milvus", "ollama", "qwen", "rag", "retrieval-augmented-generation", "streamlit", "xinference"], "created_at": "2023-03-31T12:12:45Z", "updated_at": "2026-02-22T00:57:25Z", "pushed_at": "2025-11-10T09:27:42Z", "owner": {"login": "chatchat-space", "avatar_url": "https://avatars.githubusercontent.com/u/139558948?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "", "archived": false, "fork": false}, {"id": 1078079172, "name": "awesome-claude-skills", "full_name": "ComposioHQ/awesome-claude-skills", "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows", "html_url": "https://github.com/ComposioHQ/awesome-claude-skills", "stargazers_count": 36520, "forks_count": 3561, "open_issues_count": 188, "watchers_count": 36520, "language": "Python", "topics": ["agent-skills", "ai-agents", "antigravity", "automation", "claude", "claude-code", "codex", "composio", "cursor", "gemini-cli", "mcp", "rube", "saas", "skill", "workflow-automation"], "created_at": "2025-10-17T07:15:01Z", "updated_at": "2026-02-22T03:47:05Z", "pushed_at": "2026-02-19T06:22:06Z", "owner": {"login": "ComposioHQ", "avatar_url": "https://avatars.githubusercontent.com/u/128464815?v=4", "type": "Organization"}, "license": null, "homepage": "", "archived": false, "fork": false}, {"id": 624681066, "name": "AgentGPT", "full_name": "reworkd/AgentGPT", "description": "🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.", "html_url": "https://github.com/reworkd/AgentGPT", "stargazers_count": 35719, "forks_count": 9453, "open_issues_count": 220, "watchers_count": 35719, "language": "TypeScript", "topics": ["agent", "agentgpt", "agents", "agi", "ai", "ai-agents", "autogpt", "baby-agi", "gpt", "langchain", "llm", "next", "openai", "t3", "t3-stack"], "created_at": "2023-04-07T02:29:19Z", "updated_at": "2026-02-21T23:07:05Z", "pushed_at": "2025-04-29T01:19:32Z", "owner": {"login": "reworkd", "avatar_url": "https://avatars.githubusercontent.com/u/120154269?v=4", "type": "Organization"}, "license": "GPL-3.0", "homepage": "https://agentgpt.reworkd.ai", "archived": true, "fork": false}, {"id": 822604462, "name": "BettaFish", "full_name": "666ghj/BettaFish", "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。", "html_url": "https://github.com/666ghj/BettaFish", "stargazers_count": 35657, "forks_count": 6822, "open_issues_count": 27, "watchers_count": 35657, "language": "Python", "topics": ["agent-framework", "data-analysis", "deep-research", "deep-search", "llms", "multi-agent-system", "nlp", "public-opinion-analysis", "python3", "sentiment-analysis"], "created_at": "2024-07-01T13:11:38Z", "updated_at": "2026-02-22T02:42:58Z", "pushed_at": "2026-02-11T07:16:53Z", "owner": {"login": "666ghj", "avatar_url": "https://avatars.githubusercontent.com/u/110395318?v=4", "type": "User"}, "license": "GPL-2.0", "homepage": "https://deepwiki.com/666ghj/BettaFish", "archived": false, "fork": false}, {"id": 600596928, "name": "LibreChat", "full_name": "danny-avila/LibreChat", "description": "Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.", "html_url": "https://github.com/danny-avila/LibreChat", "stargazers_count": 34017, "forks_count": 6854, "open_issues_count": 421, "watchers_count": 34017, "language": "TypeScript", "topics": ["ai", "anthropic", "artifacts", "aws", "azure", "chatgpt", "chatgpt-clone", "claude", "clone", "deepseek", "gemini", "google", "gpt-5", "librechat", "mcp", "o1", "openai", "responses-api", "vision", "webui"], "created_at": "2023-02-12T01:06:52Z", "updated_at": "2026-02-22T03:10:42Z", "pushed_at": "2026-02-22T02:44:50Z", "owner": {"login": "danny-avila", "avatar_url": "https://avatars.githubusercontent.com/u/110412045?v=4", "type": "User"}, "license": "MIT", "homepage": "https://librechat.ai/", "archived": false, "fork": false}, {"id": 515647260, "name": "1Panel", "full_name": "1Panel-dev/1Panel", "description": "🔥 1Panel offers an intuitive web interface for a Linux server / VPS, making it easy to manage OpenClaw agents, local LLMs, websites, databases, containers, files, and scheduled tasks.", "html_url": "https://github.com/1Panel-dev/1Panel", "stargazers_count": 33520, "forks_count": 2968, "open_issues_count": 402, "watchers_count": 33520, "language": "Go", "topics": ["1panel", "agent", "clawdbot", "docker", "docker-ui", "linux", "lnmp", "ollama", "openclaw", "openresty", "webmin"], "created_at": "2022-07-19T15:44:52Z", "updated_at": "2026-02-22T03:52:42Z", "pushed_at": "2026-02-13T10:15:12Z", "owner": {"login": "1Panel-dev", "avatar_url": "https://avatars.githubusercontent.com/u/109613420?v=4", "type": "Organization"}, "license": "GPL-3.0", "homepage": "https://1panel.pro", "archived": false, "fork": false}, {"id": 1106996539, "name": "ui-ux-pro-max-skill", "full_name": "nextlevelbuilder/ui-ux-pro-max-skill", "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms", "html_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill", "stargazers_count": 33326, "forks_count": 3303, "open_issues_count": 55, "watchers_count": 33326, "language": "Python", "topics": ["ai-skills", "antigravity", "claude", "claude-code", "codex", "command-line", "copilot", "cursor-ai", "html5", "kiro", "landing-page", "mobile-ui", "qoder", "react", "tailwindcss", "trae", "ui-design", "uikit", "windsurf-ai"], "created_at": "2025-11-30T11:36:31Z", "updated_at": "2026-02-22T03:55:30Z", "pushed_at": "2026-02-12T16:11:34Z", "owner": {"login": "nextlevelbuilder", "avatar_url": "https://avatars.githubusercontent.com/u/246974152?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://www.uupm.cc/", "archived": false, "fork": false}, {"id": 614764248, "name": "tabby", "full_name": "TabbyML/tabby", "description": "Self-hosted AI coding assistant", "html_url": "https://github.com/TabbyML/tabby", "stargazers_count": 32902, "forks_count": 1683, "open_issues_count": 291, "watchers_count": 32902, "language": "Rust", "topics": ["ai", "codegen", "coding-assistant", "coding-language", "developer-experience", "developer-tools", "gen-ai", "ide", "llms"], "created_at": "2023-03-16T09:18:01Z", "updated_at": "2026-02-22T00:52:51Z", "pushed_at": "2026-02-14T08:25:23Z", "owner": {"login": "TabbyML", "avatar_url": "https://avatars.githubusercontent.com/u/125617854?v=4", "type": "Organization"}, "license": "NOASSERTION", "homepage": "https://tabbyml.com", "archived": false, "fork": false}, {"id": 396569538, "name": "khoj", "full_name": "khoj-ai/khoj", "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.", "html_url": "https://github.com/khoj-ai/khoj", "stargazers_count": 32556, "forks_count": 1966, "open_issues_count": 93, "watchers_count": 32556, "language": "Python", "topics": ["agent", "ai", "assistant", "chat", "chatgpt", "emacs", "image-generation", "llama3", "llamacpp", "llm", "obsidian", "obsidian-md", "offline-llm", "productivity", "rag", "research", "self-hosted", "semantic-search", "stt", "whatsapp-ai"], "created_at": "2021-08-16T01:48:44Z", "updated_at": "2026-02-22T00:56:10Z", "pushed_at": "2026-01-06T20:15:01Z", "owner": {"login": "khoj-ai", "avatar_url": "https://avatars.githubusercontent.com/u/134046886?v=4", "type": "Organization"}, "license": "AGPL-3.0", "homepage": "https://khoj.dev", "archived": false, "fork": false}, {"id": 235901813, "name": "posthog", "full_name": "PostHog/posthog", "description": "🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.", "html_url": "https://github.com/PostHog/posthog", "stargazers_count": 31703, "forks_count": 2315, "open_issues_count": 3130, "watchers_count": 31703, "language": "Python", "topics": ["ab-testing", "ai-analytics", "analytics", "cdp", "data-warehouse", "experiments", "feature-flags", "javascript", "product-analytics", "python", "react", "session-replay", "surveys", "typescript", "web-analytics"], "created_at": "2020-01-23T22:46:58Z", "updated_at": "2026-02-22T03:47:46Z", "pushed_at": "2026-02-22T03:52:13Z", "owner": {"login": "PostHog", "avatar_url": "https://avatars.githubusercontent.com/u/60330232?v=4", "type": "Organization"}, "license": "NOASSERTION", "homepage": "https://posthog.com", "archived": false, "fork": false}, {"id": 683892956, "name": "ChatDev", "full_name": "OpenBMB/ChatDev", "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration", "html_url": "https://github.com/OpenBMB/ChatDev", "stargazers_count": 31072, "forks_count": 3834, "open_issues_count": 40, "watchers_count": 31072, "language": "Python", "topics": [], "created_at": "2023-08-28T02:18:13Z", "updated_at": "2026-02-22T01:47:26Z", "pushed_at": "2026-02-13T08:55:18Z", "owner": {"login": "OpenBMB", "avatar_url": "https://avatars.githubusercontent.com/u/89920203?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://arxiv.org/abs/2307.07924", "archived": false, "fork": false}, {"id": 846698999, "name": "goose", "full_name": "block/goose", "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM", "html_url": "https://github.com/block/goose", "stargazers_count": 30868, "forks_count": 2802, "open_issues_count": 321, "watchers_count": 30868, "language": "Rust", "topics": ["mcp"], "created_at": "2024-08-23T19:03:36Z", "updated_at": "2026-02-22T03:31:03Z", "pushed_at": "2026-02-22T03:18:19Z", "owner": {"login": "block", "avatar_url": "https://avatars.githubusercontent.com/u/185116535?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://block.github.io/goose/", "archived": false, "fork": false}, {"id": 876064934, "name": "ai-engineering-hub", "full_name": "patchy631/ai-engineering-hub", "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.", "html_url": "https://github.com/patchy631/ai-engineering-hub", "stargazers_count": 30393, "forks_count": 4921, "open_issues_count": 124, "watchers_count": 30393, "language": "Jupyter Notebook", "topics": ["agents", "ai", "llms", "machine-learning", "mcp", "rag"], "created_at": "2024-10-21T10:43:24Z", "updated_at": "2026-02-22T03:26:11Z", "pushed_at": "2026-01-30T10:40:58Z", "owner": {"login": "patchy631", "avatar_url": "https://avatars.githubusercontent.com/u/38653995?v=4", "type": "User"}, "license": "MIT", "homepage": "https://join.dailydoseofds.com", "archived": false, "fork": false}, {"id": 909213664, "name": "TradingAgents", "full_name": "TauricResearch/TradingAgents", "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework", "html_url": "https://github.com/TauricResearch/TradingAgents", "stargazers_count": 30310, "forks_count": 5819, "open_issues_count": 235, "watchers_count": 30310, "language": "Python", "topics": ["agent", "finance", "llm", "multiagent", "trading"], "created_at": "2024-12-28T03:31:08Z", "updated_at": "2026-02-22T03:50:31Z", "pushed_at": "2026-02-07T08:26:52Z", "owner": {"login": "TauricResearch", "avatar_url": "https://avatars.githubusercontent.com/u/192884433?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://arxiv.org/pdf/2412.20138", "archived": false, "fork": false}, {"id": 655515393, "name": "CopilotKit", "full_name": "CopilotKit/CopilotKit", "description": "The Frontend for Agents & Generative UI. React + Angular", "html_url": "https://github.com/CopilotKit/CopilotKit", "stargazers_count": 28904, "forks_count": 3753, "open_issues_count": 568, "watchers_count": 28904, "language": "TypeScript", "topics": ["agent", "agent-native", "agentic-ai", "agents", "ai", "ai-agent", "ai-assistant", "assistant", "assistant-chat-bots", "copilot", "copilot-chat", "generative-ui", "js", "llm", "nextjs", "open-source", "react", "reactjs", "ts", "typescript"], "created_at": "2023-06-19T04:08:31Z", "updated_at": "2026-02-22T01:21:12Z", "pushed_at": "2026-02-21T02:42:08Z", "owner": {"login": "CopilotKit", "avatar_url": "https://avatars.githubusercontent.com/u/131273140?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://docs.copilotkit.ai", "archived": false, "fork": false}, {"id": 655459367, "name": "awesome-ai-agents", "full_name": "e2b-dev/awesome-ai-agents", "description": "A list of AI autonomous agents", "html_url": "https://github.com/e2b-dev/awesome-ai-agents", "stargazers_count": 25935, "forks_count": 2251, "open_issues_count": 181, "watchers_count": 25935, "language": null, "topics": ["agent", "ai", "artificial-intelligence", "autogpt", "autonomous-agents", "awesome", "babyagi", "copilot", "gpt", "gpt-4", "gpt-engineer", "openai", "python"], "created_at": "2023-06-19T00:20:06Z", "updated_at": "2026-02-22T01:05:29Z", "pushed_at": "2025-02-26T10:04:45Z", "owner": {"login": "e2b-dev", "avatar_url": "https://avatars.githubusercontent.com/u/129434473?v=4", "type": "Organization"}, "license": "NOASSERTION", "homepage": "https://e2b.dev/docs", "archived": false, "fork": false}, {"id": 639835356, "name": "gpt-researcher", "full_name": "assafelovic/gpt-researcher", "description": "An autonomous agent that conducts deep research on any data using any LLM providers.", "html_url": "https://github.com/assafelovic/gpt-researcher", "stargazers_count": 25375, "forks_count": 3365, "open_issues_count": 177, "watchers_count": 25375, "language": "Python", "topics": ["agent", "ai", "automation", "deepresearch", "llms", "mcp", "mcp-server", "python", "research", "search", "webscraping"], "created_at": "2023-05-12T10:33:54Z", "updated_at": "2026-02-22T03:54:23Z", "pushed_at": "2026-02-21T07:19:02Z", "owner": {"login": "assafelovic", "avatar_url": "https://avatars.githubusercontent.com/u/13554167?v=4", "type": "User"}, "license": "Apache-2.0", "homepage": "https://gptr.dev", "archived": false, "fork": false}, {"id": 935604638, "name": "agenticSeek", "full_name": "Fosowl/agenticSeek", "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)", "html_url": "https://github.com/Fosowl/agenticSeek", "stargazers_count": 25084, "forks_count": 2782, "open_issues_count": 40, "watchers_count": 25084, "language": "Python", "topics": ["agentic-ai", "agents", "ai", "autonomous-agents", "deepseek-r1", "llm", "llm-agents", "voice-assistant"], "created_at": "2025-02-19T18:03:06Z", "updated_at": "2026-02-22T02:48:59Z", "pushed_at": "2025-11-15T13:56:20Z", "owner": {"login": "Fosowl", "avatar_url": "https://avatars.githubusercontent.com/u/49105846?v=4", "type": "User"}, "license": "GPL-3.0", "homepage": "http://agenticseek.tech", "archived": false, "fork": false}, {"id": 1032459340, "name": "OpenSpec", "full_name": "Fission-AI/OpenSpec", "description": "Spec-driven development (SDD) for AI coding assistants.", "html_url": "https://github.com/Fission-AI/OpenSpec", "stargazers_count": 24990, "forks_count": 1669, "open_issues_count": 231, "watchers_count": 24990, "language": "TypeScript", "topics": ["ai", "context-engineering", "engineering", "planning", "prd", "sdd", "sdlc", "spec", "spec-driven-development", "specification"], "created_at": "2025-08-05T10:37:45Z", "updated_at": "2026-02-22T03:53:37Z", "pushed_at": "2026-02-22T01:13:17Z", "owner": {"login": "Fission-AI", "avatar_url": "https://avatars.githubusercontent.com/u/203414896?v=4", "type": "Organization"}, "license": "MIT", "homepage": "https://openspec.dev/", "archived": false, "fork": false}, {"id": 969302809, "name": "awesome-claude-code", "full_name": "hesreallyhim/awesome-claude-code", "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic", "html_url": "https://github.com/hesreallyhim/awesome-claude-code", "stargazers_count": 24526, "forks_count": 1476, "open_issues_count": 123, "watchers_count": 24526, "language": "Python", "topics": ["agent-skills", "agentic-code", "agentic-coding", "ai-workflow-optimization", "ai-workflows", "anthropic", "anthropic-claude", "awesome", "awesome-list", "awesome-lists", "awesome-resources", "claude", "claude-code", "coding-agent", "coding-agents", "coding-assistant", "coding-assistants", "llm"], "created_at": "2025-04-19T20:55:59Z", "updated_at": "2026-02-22T03:50:05Z", "pushed_at": "2026-02-22T03:50:02Z", "owner": {"login": "hesreallyhim", "avatar_url": "https://avatars.githubusercontent.com/u/172150522?v=4", "type": "User"}, "license": "NOASSERTION", "homepage": "", "archived": false, "fork": false}, {"id": 205679232, "name": "gin-vue-admin", "full_name": "flipped-aurora/gin-vue-admin", "description": "🚀Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，内置mcp辅助服务，内置skills管理，支持TS和JS混用。它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能。", "html_url": "https://github.com/flipped-aurora/gin-vue-admin", "stargazers_count": 24326, "forks_count": 7012, "open_issues_count": 38, "watchers_count": 24326, "language": "Go", "topics": ["admin", "ai", "casbin", "element-ui", "gin", "gin-admin", "gin-vue-admin", "go", "go-admin", "golang", "gorm", "i18n", "jwt", "mcp", "skills", "vite", "vue", "vue-admin", "vue3"], "created_at": "2019-09-01T13:22:35Z", "updated_at": "2026-02-22T03:30:49Z", "pushed_at": "2026-02-10T08:17:00Z", "owner": {"login": "flipped-aurora", "avatar_url": "https://avatars.githubusercontent.com/u/63276650?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "http://demo.gin-vue-admin.com/", "archived": false, "fork": false}, {"id": 221654678, "name": "haystack", "full_name": "deepset-ai/haystack", "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.", "html_url": "https://github.com/deepset-ai/haystack", "stargazers_count": 24254, "forks_count": 2615, "open_issues_count": 109, "watchers_count": 24254, "language": "MDX", "topics": ["agent", "agents", "ai", "gemini", "generative-ai", "gpt-4", "information-retrieval", "large-language-models", "llm", "machine-learning", "nlp", "orchestration", "python", "pytorch", "question-answering", "rag", "retrieval-augmented-generation", "semantic-search", "summarization", "transformers"], "created_at": "2019-11-14T09:05:28Z", "updated_at": "2026-02-22T02:04:27Z", "pushed_at": "2026-02-20T16:46:16Z", "owner": {"login": "deepset-ai", "avatar_url": "https://avatars.githubusercontent.com/u/51827949?v=4", "type": "Organization"}, "license": "Apache-2.0", "homepage": "https://haystack.deepset.ai", "archived": false, "fork": false}];
+        
+        function getLanguageClass(lang) {
+            if (!lang) return 'lang-default';
+            const langMap = {
+                'JavaScript': 'lang-javascript',
+                'Python': 'lang-python',
+                'TypeScript': 'lang-typescript',
+                'Go': 'lang-go',
+                'Rust': 'lang-rust',
+                'Java': 'lang-java',
+                'C++': 'lang-cpp',
+                'Ruby': 'lang-ruby'
+            };
+            return langMap[lang] || 'lang-default';
+        }
+        
+        function formatNumber(num) {
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'k';
+            }
+            return num.toString();
+        }
+        
+        function renderRepos(reposToRender) {
+            const grid = document.getElementById('repoGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (reposToRender.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            
+            grid.innerHTML = reposToRender.map(repo => `
+                <div class="repo-card" data-language="${repo.language || 'unknown'}">
+                    <div class="repo-header">
+                        <img class="repo-avatar" src="${repo.owner.avatar_url}" alt="${repo.owner.login}">
+                        <div class="repo-info">
+                            <h3 class="repo-name">
+                                <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                            </h3>
+                            <div class="repo-owner">by ${repo.owner.login}</div>
+                        </div>
+                    </div>
+                    <p class="repo-desc">${repo.description || '暂无描述'}</p>
+                    <div class="repo-meta">
+                        <span class="stars">⭐ ${formatNumber(repo.stargazers_count)}</span>
+                        <span class="forks">🍴 ${formatNumber(repo.forks_count)}</span>
+                        <span class="issues">❗ ${formatNumber(repo.open_issues_count)}</span>
+                        ${repo.language ? `<span><span class="language-dot ${getLanguageClass(repo.language)}"></span>${repo.language}</span>` : ''}
+                    </div>
+                    ${repo.topics && repo.topics.length > 0 ? `
+                        <div class="repo-topics">
+                            ${repo.topics.slice(0, 5).map(t => `<span class="topic">${t}</span>`).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+        
+        function filterRepos() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            
+            let filtered = repos;
+            
+            if (activeFilter !== 'all') {
+                filtered = filtered.filter(r => 
+                    r.language && r.language.toLowerCase() === activeFilter
+                );
+            }
+            
+            if (searchTerm) {
+                filtered = filtered.filter(r =>
+                    r.name.toLowerCase().includes(searchTerm) ||
+                    (r.description && r.description.toLowerCase().includes(searchTerm)) ||
+                    (r.topics && r.topics.some(t => t.toLowerCase().includes(searchTerm))) ||
+                    r.owner.login.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            renderRepos(filtered);
+        }
+        
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterRepos();
+            });
+        });
+        
+        document.getElementById('searchInput').addEventListener('input', filterRepos);
+        
+        renderRepos(repos);
+    </script>
+</body>
+</html>
