@@ -2,7 +2,8 @@ name: Update AI Trending
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *'   # UTC 0:00 = 北京时间 8:00
+    - cron: '0 12 * * *'  # UTC 12:00 = 北京时间 20:00
   workflow_dispatch:
 
 permissions:
@@ -31,19 +32,9 @@ jobs:
         run: |
           python scripts/generate_site.py -i trending.json -o docs
       
-      - name: Sync to Feishu Bitable
-        env:
-          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
-          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
-          FEISHU_BASE_ID: ${{ secrets.FEISHU_BASE_ID }}
-          FEISHU_TABLE_ID: ${{ secrets.FEISHU_TABLE_ID }}
-        run: |
-          python scripts/sync_to_feishu.py -i trending.json
-      
       - name: Commit and push changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git add trending.json docs/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update trending data - $(date '+%Y-%m-%d')"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update trending data - $(date '+%Y-%m-%d %H:%M')" && git push)
