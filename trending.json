@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-20T12:35:31.522257+00:00",
+  "fetched_at": "2026-03-21T01:44:13.270487+00:00",
   "total_count": 100,
   "repositories": [
     {
@@ -8,10 +8,10 @@
       "full_name": "openclaw/openclaw",
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
       "html_url": "https://github.com/openclaw/openclaw",
-      "stargazers_count": 326431,
-      "forks_count": 63108,
-      "open_issues_count": 14656,
-      "watchers_count": 326431,
+      "stargazers_count": 327223,
+      "forks_count": 63323,
+      "open_issues_count": 14720,
+      "watchers_count": 327223,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -23,8 +23,8 @@
         "personal"
       ],
       "created_at": "2025-11-24T10:16:47Z",
-      "updated_at": "2026-03-20T12:35:07Z",
-      "pushed_at": "2026-03-20T11:50:18Z",
+      "updated_at": "2026-03-21T01:43:18Z",
+      "pushed_at": "2026-03-21T01:29:41Z",
       "owner": {
         "login": "openclaw",
         "avatar_url": "https://avatars.githubusercontent.com/u/252820863?v=4",
@@ -41,10 +41,10 @@
       "full_name": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "html_url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stargazers_count": 182636,
-      "forks_count": 46231,
-      "open_issues_count": 366,
-      "watchers_count": 182636,
+      "stargazers_count": 182637,
+      "forks_count": 46225,
+      "open_issues_count": 371,
+      "watchers_count": 182637,
       "language": "Python",
       "topics": [
         "ai",
@@ -56,8 +56,8 @@
         "python"
       ],
       "created_at": "2023-03-16T09:21:07Z",
-      "updated_at": "2026-03-20T12:16:12Z",
-      "pushed_at": "2026-03-20T11:34:48Z",
+      "updated_at": "2026-03-21T01:32:26Z",
+      "pushed_at": "2026-03-20T23:28:54Z",
       "owner": {
         "login": "Significant-Gravitas",
         "avatar_url": "https://avatars.githubusercontent.com/u/130738209?v=4",
@@ -74,10 +74,10 @@
       "full_name": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "html_url": "https://github.com/ollama/ollama",
-      "stargazers_count": 165672,
-      "forks_count": 15073,
-      "open_issues_count": 2686,
-      "watchers_count": 165672,
+      "stargazers_count": 165710,
+      "forks_count": 15082,
+      "open_issues_count": 2689,
+      "watchers_count": 165710,
       "language": "Go",
       "topics": [
         "deepseek",
@@ -97,8 +97,8 @@
         "qwen"
       ],
       "created_at": "2023-06-26T19:39:32Z",
-      "updated_at": "2026-03-20T12:31:43Z",
-      "pushed_at": "2026-03-20T00:44:30Z",
+      "updated_at": "2026-03-21T01:38:43Z",
+      "pushed_at": "2026-03-20T23:32:53Z",
       "owner": {
         "login": "ollama",
         "avatar_url": "https://avatars.githubusercontent.com/u/151674099?v=4",
@@ -115,10 +115,10 @@
       "full_name": "huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "html_url": "https://github.com/huggingface/transformers",
-      "stargazers_count": 158145,
-      "forks_count": 32566,
-      "open_issues_count": 2282,
-      "watchers_count": 158145,
+      "stargazers_count": 158152,
+      "forks_count": 32556,
+      "open_issues_count": 2280,
+      "watchers_count": 158152,
       "language": "Python",
       "topics": [
         "audio",
@@ -142,8 +142,8 @@
         "vlm"
       ],
       "created_at": "2018-10-29T13:56:00Z",
-      "updated_at": "2026-03-20T12:30:35Z",
-      "pushed_at": "2026-03-20T12:21:11Z",
+      "updated_at": "2026-03-21T01:09:32Z",
+      "pushed_at": "2026-03-20T22:40:40Z",
       "owner": {
         "login": "huggingface",
         "avatar_url": "https://avatars.githubusercontent.com/u/25720743?v=4",
@@ -160,10 +160,10 @@
       "full_name": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
       "html_url": "https://github.com/f/prompts.chat",
-      "stargazers_count": 153411,
-      "forks_count": 20191,
+      "stargazers_count": 153447,
+      "forks_count": 20184,
       "open_issues_count": 35,
-      "watchers_count": 153411,
+      "watchers_count": 153447,
       "language": "HTML",
       "topics": [
         "ai",
@@ -186,7 +186,7 @@
         "typescript"
       ],
       "created_at": "2022-12-05T13:54:13Z",
-      "updated_at": "2026-03-20T12:26:50Z",
+      "updated_at": "2026-03-21T01:31:50Z",
       "pushed_at": "2026-03-20T03:50:59Z",
       "owner": {
         "login": "f",
@@ -204,10 +204,10 @@
       "full_name": "langflow-ai/langflow",
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "html_url": "https://github.com/langflow-ai/langflow",
-      "stargazers_count": 145940,
-      "forks_count": 8619,
-      "open_issues_count": 898,
-      "watchers_count": 145940,
+      "stargazers_count": 145958,
+      "forks_count": 8621,
+      "open_issues_count": 894,
+      "watchers_count": 145958,
       "language": "Python",
       "topics": [
         "agents",
@@ -218,8 +218,8 @@
         "react-flow"
       ],
       "created_at": "2023-02-08T22:28:03Z",
-      "updated_at": "2026-03-20T12:34:19Z",
-      "pushed_at": "2026-03-20T12:27:30Z",
+      "updated_at": "2026-03-21T01:40:51Z",
+      "pushed_at": "2026-03-21T00:34:28Z",
       "owner": {
         "login": "langflow-ai",
         "avatar_url": "https://avatars.githubusercontent.com/u/85702467?v=4",
@@ -236,10 +236,10 @@
       "full_name": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "html_url": "https://github.com/langgenius/dify",
-      "stargazers_count": 133702,
-      "forks_count": 20833,
-      "open_issues_count": 810,
-      "watchers_count": 133702,
+      "stargazers_count": 133747,
+      "forks_count": 20838,
+      "open_issues_count": 806,
+      "watchers_count": 133747,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -264,8 +264,8 @@
         "workflow"
       ],
       "created_at": "2023-04-12T07:40:24Z",
-      "updated_at": "2026-03-20T12:33:55Z",
-      "pushed_at": "2026-03-20T12:31:53Z",
+      "updated_at": "2026-03-21T01:33:11Z",
+      "pushed_at": "2026-03-20T15:46:20Z",
       "owner": {
         "login": "langgenius",
         "avatar_url": "https://avatars.githubusercontent.com/u/127165244?v=4",
@@ -282,10 +282,10 @@
       "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
       "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
       "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-      "stargazers_count": 132347,
-      "forks_count": 33507,
-      "open_issues_count": 133,
-      "watchers_count": 132347,
+      "stargazers_count": 132421,
+      "forks_count": 33512,
+      "open_issues_count": 132,
+      "watchers_count": 132421,
       "language": null,
       "topics": [
         "ai",
@@ -310,7 +310,7 @@
         "windsurf-ai"
       ],
       "created_at": "2025-03-05T16:38:29Z",
-      "updated_at": "2026-03-20T12:31:33Z",
+      "updated_at": "2026-03-21T01:42:04Z",
       "pushed_at": "2026-03-09T12:48:57Z",
       "owner": {
         "login": "x1xhlol",
@@ -328,10 +328,10 @@
       "full_name": "langchain-ai/langchain",
       "description": "The agent engineering platform",
       "html_url": "https://github.com/langchain-ai/langchain",
-      "stargazers_count": 130359,
-      "forks_count": 21495,
-      "open_issues_count": 476,
-      "watchers_count": 130359,
+      "stargazers_count": 130391,
+      "forks_count": 21491,
+      "open_issues_count": 482,
+      "watchers_count": 130391,
       "language": "Python",
       "topics": [
         "agents",
@@ -355,8 +355,8 @@
         "rag"
       ],
       "created_at": "2022-10-17T02:58:36Z",
-      "updated_at": "2026-03-20T12:21:28Z",
-      "pushed_at": "2026-03-20T08:12:40Z",
+      "updated_at": "2026-03-21T01:32:59Z",
+      "pushed_at": "2026-03-20T20:46:08Z",
       "owner": {
         "login": "langchain-ai",
         "avatar_url": "https://avatars.githubusercontent.com/u/126733545?v=4",
@@ -373,10 +373,10 @@
       "full_name": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "html_url": "https://github.com/open-webui/open-webui",
-      "stargazers_count": 127977,
-      "forks_count": 18082,
-      "open_issues_count": 333,
-      "watchers_count": 127977,
+      "stargazers_count": 128034,
+      "forks_count": 18095,
+      "open_issues_count": 319,
+      "watchers_count": 128034,
       "language": "Python",
       "topics": [
         "ai",
@@ -396,8 +396,8 @@
         "webui"
       ],
       "created_at": "2023-10-06T22:08:27Z",
-      "updated_at": "2026-03-20T12:28:59Z",
-      "pushed_at": "2026-03-20T00:52:44Z",
+      "updated_at": "2026-03-21T01:28:27Z",
+      "pushed_at": "2026-03-20T23:54:16Z",
       "owner": {
         "login": "open-webui",
         "avatar_url": "https://avatars.githubusercontent.com/u/158137808?v=4",
@@ -414,10 +414,10 @@
       "full_name": "microsoft/generative-ai-for-beginners",
       "description": "21 Lessons, Get Started Building with Generative AI ",
       "html_url": "https://github.com/microsoft/generative-ai-for-beginners",
-      "stargazers_count": 108287,
-      "forks_count": 58037,
+      "stargazers_count": 108295,
+      "forks_count": 58050,
       "open_issues_count": 8,
-      "watchers_count": 108287,
+      "watchers_count": 108295,
       "language": "Jupyter Notebook",
       "topics": [
         "ai",
@@ -436,7 +436,7 @@
         "transformers"
       ],
       "created_at": "2023-06-19T16:28:59Z",
-      "updated_at": "2026-03-20T11:45:07Z",
+      "updated_at": "2026-03-21T01:13:22Z",
       "pushed_at": "2026-03-19T03:47:42Z",
       "owner": {
         "login": "microsoft",
@@ -454,10 +454,10 @@
       "full_name": "Shubhamsaboo/awesome-llm-apps",
       "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
       "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-      "stargazers_count": 102939,
-      "forks_count": 15004,
-      "open_issues_count": 12,
-      "watchers_count": 102939,
+      "stargazers_count": 102961,
+      "forks_count": 15007,
+      "open_issues_count": 6,
+      "watchers_count": 102961,
       "language": "Python",
       "topics": [
         "agents",
@@ -466,7 +466,7 @@
         "rag"
       ],
       "created_at": "2024-04-29T05:30:25Z",
-      "updated_at": "2026-03-20T12:33:36Z",
+      "updated_at": "2026-03-21T00:37:36Z",
       "pushed_at": "2026-03-17T00:09:29Z",
       "owner": {
         "login": "Shubhamsaboo",
@@ -484,14 +484,14 @@
       "full_name": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
       "html_url": "https://github.com/obra/superpowers",
-      "stargazers_count": 100716,
-      "forks_count": 8037,
-      "open_issues_count": 148,
-      "watchers_count": 100716,
+      "stargazers_count": 101593,
+      "forks_count": 8117,
+      "open_issues_count": 152,
+      "watchers_count": 101593,
       "language": "Shell",
       "topics": [],
       "created_at": "2025-10-09T19:45:18Z",
-      "updated_at": "2026-03-20T12:34:42Z",
+      "updated_at": "2026-03-21T01:44:06Z",
       "pushed_at": "2026-03-19T20:26:22Z",
       "owner": {
         "login": "obra",
@@ -509,10 +509,10 @@
       "full_name": "google-gemini/gemini-cli",
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
       "html_url": "https://github.com/google-gemini/gemini-cli",
-      "stargazers_count": 98469,
-      "forks_count": 12453,
-      "open_issues_count": 3052,
-      "watchers_count": 98469,
+      "stargazers_count": 98510,
+      "forks_count": 12460,
+      "open_issues_count": 3086,
+      "watchers_count": 98510,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -524,8 +524,8 @@
         "mcp-server"
       ],
       "created_at": "2025-04-17T17:04:31Z",
-      "updated_at": "2026-03-20T12:20:32Z",
-      "pushed_at": "2026-03-20T09:21:22Z",
+      "updated_at": "2026-03-21T01:28:08Z",
+      "pushed_at": "2026-03-21T01:39:19Z",
       "owner": {
         "login": "google-gemini",
         "avatar_url": "https://avatars.githubusercontent.com/u/161781182?v=4",
@@ -542,10 +542,10 @@
       "full_name": "firecrawl/firecrawl",
       "description": "🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data",
       "html_url": "https://github.com/firecrawl/firecrawl",
-      "stargazers_count": 95544,
-      "forks_count": 6527,
-      "open_issues_count": 221,
-      "watchers_count": 95544,
+      "stargazers_count": 95754,
+      "forks_count": 6528,
+      "open_issues_count": 227,
+      "watchers_count": 95754,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -569,8 +569,8 @@
         "webscraping"
       ],
       "created_at": "2024-04-15T21:02:29Z",
-      "updated_at": "2026-03-20T12:33:27Z",
-      "pushed_at": "2026-03-20T03:40:21Z",
+      "updated_at": "2026-03-21T01:43:42Z",
+      "pushed_at": "2026-03-20T20:59:50Z",
       "owner": {
         "login": "firecrawl",
         "avatar_url": "https://avatars.githubusercontent.com/u/135057108?v=4",
@@ -587,10 +587,10 @@
       "full_name": "microsoft/markitdown",
       "description": "Python tool for converting files and office documents to Markdown.",
       "html_url": "https://github.com/microsoft/markitdown",
-      "stargazers_count": 91035,
-      "forks_count": 5387,
+      "stargazers_count": 91195,
+      "forks_count": 5400,
       "open_issues_count": 477,
-      "watchers_count": 91035,
+      "watchers_count": 91195,
       "language": "Python",
       "topics": [
         "autogen",
@@ -602,7 +602,7 @@
         "pdf"
       ],
       "created_at": "2024-11-13T19:56:40Z",
-      "updated_at": "2026-03-20T12:25:57Z",
+      "updated_at": "2026-03-21T01:43:58Z",
       "pushed_at": "2026-03-16T17:35:24Z",
       "owner": {
         "login": "microsoft",
@@ -620,10 +620,10 @@
       "full_name": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "html_url": "https://github.com/affaan-m/everything-claude-code",
-      "stargazers_count": 89507,
-      "forks_count": 11723,
-      "open_issues_count": 29,
-      "watchers_count": 89507,
+      "stargazers_count": 90873,
+      "forks_count": 11924,
+      "open_issues_count": 30,
+      "watchers_count": 90873,
       "language": "JavaScript",
       "topics": [
         "ai-agents",
@@ -636,8 +636,8 @@
         "productivity"
       ],
       "created_at": "2026-01-18T00:51:51Z",
-      "updated_at": "2026-03-20T12:35:08Z",
-      "pushed_at": "2026-03-20T12:26:44Z",
+      "updated_at": "2026-03-21T01:43:55Z",
+      "pushed_at": "2026-03-20T14:30:52Z",
       "owner": {
         "login": "affaan-m",
         "avatar_url": "https://avatars.githubusercontent.com/u/124439313?v=4",
@@ -654,10 +654,10 @@
       "full_name": "rasbt/LLMs-from-scratch",
       "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
       "html_url": "https://github.com/rasbt/LLMs-from-scratch",
-      "stargazers_count": 88814,
-      "forks_count": 13573,
-      "open_issues_count": 7,
-      "watchers_count": 88814,
+      "stargazers_count": 88839,
+      "forks_count": 13566,
+      "open_issues_count": 3,
+      "watchers_count": 88839,
       "language": "Jupyter Notebook",
       "topics": [
         "ai",
@@ -678,8 +678,8 @@
         "transformers"
       ],
       "created_at": "2023-07-23T18:15:57Z",
-      "updated_at": "2026-03-20T12:27:38Z",
-      "pushed_at": "2026-03-07T23:05:50Z",
+      "updated_at": "2026-03-21T01:31:49Z",
+      "pushed_at": "2026-03-21T00:47:52Z",
       "owner": {
         "login": "rasbt",
         "avatar_url": "https://avatars.githubusercontent.com/u/5618407?v=4",
@@ -696,10 +696,10 @@
       "full_name": "ChatGPTNextWeb/NextChat",
       "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
       "html_url": "https://github.com/ChatGPTNextWeb/NextChat",
-      "stargazers_count": 87563,
-      "forks_count": 60137,
+      "stargazers_count": 87556,
+      "forks_count": 60125,
       "open_issues_count": 797,
-      "watchers_count": 87563,
+      "watchers_count": 87556,
       "language": "TypeScript",
       "topics": [
         "calclaude",
@@ -723,7 +723,7 @@
         "webui"
       ],
       "created_at": "2023-03-10T18:27:54Z",
-      "updated_at": "2026-03-20T12:15:02Z",
+      "updated_at": "2026-03-20T22:38:47Z",
       "pushed_at": "2025-12-02T17:05:02Z",
       "owner": {
         "login": "ChatGPTNextWeb",
@@ -741,10 +741,10 @@
       "full_name": "browser-use/browser-use",
       "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
       "html_url": "https://github.com/browser-use/browser-use",
-      "stargazers_count": 81383,
-      "forks_count": 9612,
-      "open_issues_count": 227,
-      "watchers_count": 81383,
+      "stargazers_count": 81447,
+      "forks_count": 9617,
+      "open_issues_count": 228,
+      "watchers_count": 81447,
       "language": "Python",
       "topics": [
         "ai-agents",
@@ -756,8 +756,8 @@
         "python"
       ],
       "created_at": "2024-10-31T16:00:56Z",
-      "updated_at": "2026-03-20T12:16:50Z",
-      "pushed_at": "2026-03-20T07:52:26Z",
+      "updated_at": "2026-03-21T01:41:24Z",
+      "pushed_at": "2026-03-20T20:01:38Z",
       "owner": {
         "login": "browser-use",
         "avatar_url": "https://avatars.githubusercontent.com/u/192012301?v=4",
@@ -774,10 +774,10 @@
       "full_name": "mlabonne/llm-course",
       "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
       "html_url": "https://github.com/mlabonne/llm-course",
-      "stargazers_count": 77104,
-      "forks_count": 8911,
+      "stargazers_count": 77115,
+      "forks_count": 8905,
       "open_issues_count": 78,
-      "watchers_count": 77104,
+      "watchers_count": 77115,
       "language": null,
       "topics": [
         "course",
@@ -787,7 +787,7 @@
         "roadmap"
       ],
       "created_at": "2023-06-17T22:16:25Z",
-      "updated_at": "2026-03-20T12:21:49Z",
+      "updated_at": "2026-03-21T01:34:00Z",
       "pushed_at": "2026-02-05T13:09:26Z",
       "owner": {
         "login": "mlabonne",
@@ -805,10 +805,10 @@
       "full_name": "infiniflow/ragflow",
       "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
       "html_url": "https://github.com/infiniflow/ragflow",
-      "stargazers_count": 75591,
-      "forks_count": 8465,
-      "open_issues_count": 3141,
-      "watchers_count": 75591,
+      "stargazers_count": 75619,
+      "forks_count": 8469,
+      "open_issues_count": 3139,
+      "watchers_count": 75619,
       "language": "Python",
       "topics": [
         "agent",
@@ -833,8 +833,8 @@
         "retrieval-augmented-generation"
       ],
       "created_at": "2023-12-12T06:13:13Z",
-      "updated_at": "2026-03-20T12:33:29Z",
-      "pushed_at": "2026-03-20T12:32:00Z",
+      "updated_at": "2026-03-21T01:32:59Z",
+      "pushed_at": "2026-03-20T15:39:34Z",
       "owner": {
         "login": "infiniflow",
         "avatar_url": "https://avatars.githubusercontent.com/u/69962740?v=4",
@@ -851,10 +851,10 @@
       "full_name": "lobehub/lobehub",
       "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "html_url": "https://github.com/lobehub/lobehub",
-      "stargazers_count": 74010,
-      "forks_count": 14815,
-      "open_issues_count": 649,
-      "watchers_count": 74010,
+      "stargazers_count": 74032,
+      "forks_count": 14818,
+      "open_issues_count": 652,
+      "watchers_count": 74032,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -871,8 +871,8 @@
         "openai"
       ],
       "created_at": "2023-05-21T07:19:12Z",
-      "updated_at": "2026-03-20T12:34:57Z",
-      "pushed_at": "2026-03-20T12:34:51Z",
+      "updated_at": "2026-03-21T00:29:58Z",
+      "pushed_at": "2026-03-21T00:44:06Z",
       "owner": {
         "login": "lobehub",
         "avatar_url": "https://avatars.githubusercontent.com/u/131470832?v=4",
@@ -889,10 +889,10 @@
       "full_name": "vllm-project/vllm",
       "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
       "html_url": "https://github.com/vllm-project/vllm",
-      "stargazers_count": 73783,
-      "forks_count": 14571,
-      "open_issues_count": 3821,
-      "watchers_count": 73783,
+      "stargazers_count": 73811,
+      "forks_count": 14584,
+      "open_issues_count": 3825,
+      "watchers_count": 73811,
       "language": "Python",
       "topics": [
         "amd",
@@ -917,8 +917,8 @@
         "transformer"
       ],
       "created_at": "2023-02-09T11:23:20Z",
-      "updated_at": "2026-03-20T11:45:48Z",
-      "pushed_at": "2026-03-20T11:17:27Z",
+      "updated_at": "2026-03-21T00:53:47Z",
+      "pushed_at": "2026-03-20T23:13:02Z",
       "owner": {
         "login": "vllm-project",
         "avatar_url": "https://avatars.githubusercontent.com/u/136984999?v=4",
@@ -935,10 +935,10 @@
       "full_name": "openai/openai-cookbook",
       "description": "Examples and guides for using the OpenAI API",
       "html_url": "https://github.com/openai/openai-cookbook",
-      "stargazers_count": 72260,
-      "forks_count": 12168,
+      "stargazers_count": 72270,
+      "forks_count": 12169,
       "open_issues_count": 116,
-      "watchers_count": 72260,
+      "watchers_count": 72270,
       "language": "Jupyter Notebook",
       "topics": [
         "chatgpt",
@@ -947,7 +947,7 @@
         "openai-api"
       ],
       "created_at": "2022-03-11T02:08:53Z",
-      "updated_at": "2026-03-20T12:24:11Z",
+      "updated_at": "2026-03-21T00:00:17Z",
       "pushed_at": "2026-03-20T00:47:16Z",
       "owner": {
         "login": "openai",
@@ -965,10 +965,10 @@
       "full_name": "dair-ai/Prompt-Engineering-Guide",
       "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
       "html_url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
-      "stargazers_count": 71996,
-      "forks_count": 7687,
+      "stargazers_count": 72014,
+      "forks_count": 7689,
       "open_issues_count": 248,
-      "watchers_count": 71996,
+      "watchers_count": 72014,
       "language": "MDX",
       "topics": [
         "agent",
@@ -984,7 +984,7 @@
         "rag"
       ],
       "created_at": "2022-12-16T16:04:50Z",
-      "updated_at": "2026-03-20T11:44:50Z",
+      "updated_at": "2026-03-21T01:43:54Z",
       "pushed_at": "2026-03-11T20:09:13Z",
       "owner": {
         "login": "dair-ai",
@@ -1002,10 +1002,10 @@
       "full_name": "OpenHands/OpenHands",
       "description": "🙌 OpenHands: AI-Driven Development",
       "html_url": "https://github.com/OpenHands/OpenHands",
-      "stargazers_count": 69459,
-      "forks_count": 8712,
+      "stargazers_count": 69467,
+      "forks_count": 8709,
       "open_issues_count": 324,
-      "watchers_count": 69459,
+      "watchers_count": 69467,
       "language": "Python",
       "topics": [
         "agent",
@@ -1019,8 +1019,8 @@
         "openai"
       ],
       "created_at": "2024-03-13T03:33:31Z",
-      "updated_at": "2026-03-20T12:23:24Z",
-      "pushed_at": "2026-03-20T11:20:25Z",
+      "updated_at": "2026-03-21T01:20:15Z",
+      "pushed_at": "2026-03-20T20:44:30Z",
       "owner": {
         "login": "OpenHands",
         "avatar_url": "https://avatars.githubusercontent.com/u/225919603?v=4",
@@ -1037,10 +1037,10 @@
       "full_name": "hiyouga/LlamaFactory",
       "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
       "html_url": "https://github.com/hiyouga/LlamaFactory",
-      "stargazers_count": 68778,
-      "forks_count": 8385,
+      "stargazers_count": 68809,
+      "forks_count": 8387,
       "open_issues_count": 931,
-      "watchers_count": 68778,
+      "watchers_count": 68809,
       "language": "Python",
       "topics": [
         "agent",
@@ -1065,7 +1065,7 @@
         "transformers"
       ],
       "created_at": "2023-05-28T10:09:12Z",
-      "updated_at": "2026-03-20T11:45:18Z",
+      "updated_at": "2026-03-21T01:29:37Z",
       "pushed_at": "2026-03-20T08:50:12Z",
       "owner": {
         "login": "hiyouga",
@@ -1083,10 +1083,10 @@
       "full_name": "xtekky/gpt4free",
       "description": "The official gpt4free repository | various collection of powerful language models | opus 4.6 gpt 5.3 kimi 2.5 deepseek v3.2 gemini 3",
       "html_url": "https://github.com/xtekky/gpt4free",
-      "stargazers_count": 65806,
-      "forks_count": 13648,
-      "open_issues_count": 7,
-      "watchers_count": 65806,
+      "stargazers_count": 65812,
+      "forks_count": 13647,
+      "open_issues_count": 5,
+      "watchers_count": 65812,
       "language": "Python",
       "topics": [
         "chatbot",
@@ -1111,8 +1111,8 @@
         "reverse-engineering"
       ],
       "created_at": "2023-03-29T17:00:43Z",
-      "updated_at": "2026-03-20T12:21:38Z",
-      "pushed_at": "2026-03-20T11:19:34Z",
+      "updated_at": "2026-03-21T00:50:49Z",
+      "pushed_at": "2026-03-20T16:01:46Z",
       "owner": {
         "login": "xtekky",
         "avatar_url": "https://avatars.githubusercontent.com/u/98614666?v=4",
@@ -1129,10 +1129,10 @@
       "full_name": "FoundationAgents/MetaGPT",
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
       "html_url": "https://github.com/FoundationAgents/MetaGPT",
-      "stargazers_count": 65658,
+      "stargazers_count": 65679,
       "forks_count": 8276,
-      "open_issues_count": 94,
-      "watchers_count": 65658,
+      "open_issues_count": 90,
+      "watchers_count": 65679,
       "language": "Python",
       "topics": [
         "agent",
@@ -1142,7 +1142,7 @@
         "multi-agent"
       ],
       "created_at": "2023-06-30T09:04:55Z",
-      "updated_at": "2026-03-20T12:17:21Z",
+      "updated_at": "2026-03-21T01:29:59Z",
       "pushed_at": "2026-01-21T10:12:33Z",
       "owner": {
         "login": "FoundationAgents",
@@ -1160,10 +1160,10 @@
       "full_name": "OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
       "html_url": "https://github.com/OpenBB-finance/OpenBB",
-      "stargazers_count": 63356,
-      "forks_count": 6235,
+      "stargazers_count": 63359,
+      "forks_count": 6226,
       "open_issues_count": 66,
-      "watchers_count": 63356,
+      "watchers_count": 63359,
       "language": "Python",
       "topics": [
         "ai",
@@ -1181,7 +1181,7 @@
         "stocks"
       ],
       "created_at": "2020-12-20T10:46:38Z",
-      "updated_at": "2026-03-20T12:00:29Z",
+      "updated_at": "2026-03-21T00:31:10Z",
       "pushed_at": "2026-03-19T16:21:37Z",
       "owner": {
         "login": "OpenBB-finance",
@@ -1199,15 +1199,15 @@
       "full_name": "cline/cline",
       "description": "Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.",
       "html_url": "https://github.com/cline/cline",
-      "stargazers_count": 59189,
-      "forks_count": 5999,
-      "open_issues_count": 797,
-      "watchers_count": 59189,
+      "stargazers_count": 59194,
+      "forks_count": 6000,
+      "open_issues_count": 800,
+      "watchers_count": 59194,
       "language": "TypeScript",
       "topics": [],
       "created_at": "2024-07-06T07:28:10Z",
-      "updated_at": "2026-03-20T12:32:48Z",
-      "pushed_at": "2026-03-20T04:01:26Z",
+      "updated_at": "2026-03-21T00:51:30Z",
+      "pushed_at": "2026-03-21T00:15:30Z",
       "owner": {
         "login": "cline",
         "avatar_url": "https://avatars.githubusercontent.com/u/184127137?v=4",
@@ -1224,10 +1224,10 @@
       "full_name": "PlexPt/awesome-chatgpt-prompts-zh",
       "description": "ChatGPT 中文调教指南。各种场景使用指南。学习怎么让它听你的话。",
       "html_url": "https://github.com/PlexPt/awesome-chatgpt-prompts-zh",
-      "stargazers_count": 58787,
-      "forks_count": 13572,
+      "stargazers_count": 58790,
+      "forks_count": 13571,
       "open_issues_count": 43,
-      "watchers_count": 58787,
+      "watchers_count": 58790,
       "language": null,
       "topics": [
         "chat-gpt",
@@ -1237,7 +1237,7 @@
         "gpt"
       ],
       "created_at": "2022-12-12T01:55:03Z",
-      "updated_at": "2026-03-20T12:11:18Z",
+      "updated_at": "2026-03-20T18:56:29Z",
       "pushed_at": "2025-01-01T08:34:33Z",
       "owner": {
         "login": "PlexPt",
@@ -1255,10 +1255,10 @@
       "full_name": "unslothai/unsloth",
       "description": "Unified web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.",
       "html_url": "https://github.com/unslothai/unsloth",
-      "stargazers_count": 57002,
-      "forks_count": 4787,
-      "open_issues_count": 999,
-      "watchers_count": 57002,
+      "stargazers_count": 57130,
+      "forks_count": 4799,
+      "open_issues_count": 1006,
+      "watchers_count": 57130,
       "language": "Python",
       "topics": [
         "agent",
@@ -1283,8 +1283,8 @@
         "voice-cloning"
       ],
       "created_at": "2023-11-29T16:50:09Z",
-      "updated_at": "2026-03-20T12:29:40Z",
-      "pushed_at": "2026-03-20T12:17:06Z",
+      "updated_at": "2026-03-21T01:24:48Z",
+      "pushed_at": "2026-03-20T21:39:12Z",
       "owner": {
         "login": "unslothai",
         "avatar_url": "https://avatars.githubusercontent.com/u/150920049?v=4",
@@ -1296,15 +1296,40 @@
       "fork": false
     },
     {
+      "id": 1075372545,
+      "name": "agency-agents",
+      "full_name": "msitarzewski/agency-agents",
+      "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "html_url": "https://github.com/msitarzewski/agency-agents",
+      "stargazers_count": 56817,
+      "forks_count": 8502,
+      "open_issues_count": 82,
+      "watchers_count": 56817,
+      "language": "Shell",
+      "topics": [],
+      "created_at": "2025-10-13T12:12:29Z",
+      "updated_at": "2026-03-21T01:42:38Z",
+      "pushed_at": "2026-03-15T21:37:36Z",
+      "owner": {
+        "login": "msitarzewski",
+        "avatar_url": "https://avatars.githubusercontent.com/u/1972242?v=4",
+        "type": "User"
+      },
+      "license": "MIT",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
       "id": 765083837,
       "name": "MinerU",
       "full_name": "opendatalab/MinerU",
       "description": "Transforms complex documents like PDFs into LLM-ready markdown/JSON for your Agentic workflows.",
       "html_url": "https://github.com/opendatalab/MinerU",
-      "stargazers_count": 56643,
-      "forks_count": 4693,
+      "stargazers_count": 56672,
+      "forks_count": 4695,
       "open_issues_count": 196,
-      "watchers_count": 56643,
+      "watchers_count": 56672,
       "language": "Python",
       "topics": [
         "ai4science",
@@ -1322,7 +1347,7 @@
         "python"
       ],
       "created_at": "2024-02-29T08:52:34Z",
-      "updated_at": "2026-03-20T12:12:42Z",
+      "updated_at": "2026-03-21T01:42:38Z",
       "pushed_at": "2026-03-19T07:59:07Z",
       "owner": {
         "login": "opendatalab",
@@ -1335,40 +1360,15 @@
       "fork": false
     },
     {
-      "id": 1075372545,
-      "name": "agency-agents",
-      "full_name": "msitarzewski/agency-agents",
-      "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
-      "html_url": "https://github.com/msitarzewski/agency-agents",
-      "stargazers_count": 56221,
-      "forks_count": 8419,
-      "open_issues_count": 79,
-      "watchers_count": 56221,
-      "language": "Shell",
-      "topics": [],
-      "created_at": "2025-10-13T12:12:29Z",
-      "updated_at": "2026-03-20T12:34:47Z",
-      "pushed_at": "2026-03-15T21:37:36Z",
-      "owner": {
-        "login": "msitarzewski",
-        "avatar_url": "https://avatars.githubusercontent.com/u/1972242?v=4",
-        "type": "User"
-      },
-      "license": "MIT",
-      "homepage": "",
-      "archived": false,
-      "fork": false
-    },
-    {
       "id": 680120071,
       "name": "autogen",
       "full_name": "microsoft/autogen",
       "description": "A programming framework for agentic AI",
       "html_url": "https://github.com/microsoft/autogen",
-      "stargazers_count": 55929,
-      "forks_count": 8422,
-      "open_issues_count": 686,
-      "watchers_count": 55929,
+      "stargazers_count": 55945,
+      "forks_count": 8425,
+      "open_issues_count": 689,
+      "watchers_count": 55945,
       "language": "Python",
       "topics": [
         "agentic",
@@ -1383,7 +1383,7 @@
         "llm-framework"
       ],
       "created_at": "2023-08-18T11:43:45Z",
-      "updated_at": "2026-03-20T12:23:57Z",
+      "updated_at": "2026-03-21T00:46:38Z",
       "pushed_at": "2026-03-18T22:16:35Z",
       "owner": {
         "login": "microsoft",
@@ -1401,10 +1401,10 @@
       "full_name": "AntonOsika/gpt-engineer",
       "description": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
       "html_url": "https://github.com/AntonOsika/gpt-engineer",
-      "stargazers_count": 55231,
-      "forks_count": 7319,
+      "stargazers_count": 55228,
+      "forks_count": 7317,
       "open_issues_count": 68,
-      "watchers_count": 55231,
+      "watchers_count": 55228,
       "language": "Python",
       "topics": [
         "ai",
@@ -1419,7 +1419,7 @@
         "python"
       ],
       "created_at": "2023-04-29T12:52:15Z",
-      "updated_at": "2026-03-20T12:14:37Z",
+      "updated_at": "2026-03-21T00:37:32Z",
       "pushed_at": "2025-05-14T10:15:10Z",
       "owner": {
         "login": "AntonOsika",
@@ -1437,10 +1437,10 @@
       "full_name": "microsoft/ai-agents-for-beginners",
       "description": "12 Lessons to Get Started Building AI Agents",
       "html_url": "https://github.com/microsoft/ai-agents-for-beginners",
-      "stargazers_count": 54524,
-      "forks_count": 18875,
-      "open_issues_count": 2,
-      "watchers_count": 54524,
+      "stargazers_count": 54548,
+      "forks_count": 18883,
+      "open_issues_count": 3,
+      "watchers_count": 54548,
       "language": "Jupyter Notebook",
       "topics": [
         "agentic-ai",
@@ -1453,7 +1453,7 @@
         "semantic-kernel"
       ],
       "created_at": "2024-11-28T10:42:52Z",
-      "updated_at": "2026-03-20T12:32:32Z",
+      "updated_at": "2026-03-21T01:42:36Z",
       "pushed_at": "2026-03-19T06:48:38Z",
       "owner": {
         "login": "microsoft",
@@ -1472,8 +1472,8 @@
       "description": "🔮 ChatGPT Desktop Application (Mac, Windows and Linux)",
       "html_url": "https://github.com/lencx/ChatGPT",
       "stargazers_count": 54369,
-      "forks_count": 6194,
-      "open_issues_count": 924,
+      "forks_count": 6191,
+      "open_issues_count": 925,
       "watchers_count": 54369,
       "language": "Rust",
       "topics": [
@@ -1494,7 +1494,7 @@
         "windows"
       ],
       "created_at": "2022-12-07T09:43:02Z",
-      "updated_at": "2026-03-20T12:13:14Z",
+      "updated_at": "2026-03-20T17:35:29Z",
       "pushed_at": "2024-08-29T17:58:11Z",
       "owner": {
         "login": "lencx",
@@ -1513,8 +1513,8 @@
       "description": "Build AI Agents, Visually",
       "html_url": "https://github.com/FlowiseAI/Flowise",
       "stargazers_count": 50930,
-      "forks_count": 23987,
-      "open_issues_count": 804,
+      "forks_count": 23975,
+      "open_issues_count": 806,
       "watchers_count": 50930,
       "language": "TypeScript",
       "topics": [
@@ -1537,8 +1537,8 @@
         "workflow-automation"
       ],
       "created_at": "2023-03-31T12:23:09Z",
-      "updated_at": "2026-03-20T11:36:36Z",
-      "pushed_at": "2026-03-20T10:51:41Z",
+      "updated_at": "2026-03-21T00:37:31Z",
+      "pushed_at": "2026-03-20T23:36:07Z",
       "owner": {
         "login": "FlowiseAI",
         "avatar_url": "https://avatars.githubusercontent.com/u/128289781?v=4",
@@ -1555,10 +1555,10 @@
       "full_name": "mem0ai/mem0",
       "description": "Universal memory layer for AI Agents",
       "html_url": "https://github.com/mem0ai/mem0",
-      "stargazers_count": 50508,
-      "forks_count": 5629,
-      "open_issues_count": 637,
-      "watchers_count": 50508,
+      "stargazers_count": 50547,
+      "forks_count": 5632,
+      "open_issues_count": 607,
+      "watchers_count": 50547,
       "language": "Python",
       "topics": [
         "agents",
@@ -1577,8 +1577,8 @@
         "state-management"
       ],
       "created_at": "2023-06-20T08:58:36Z",
-      "updated_at": "2026-03-20T12:16:29Z",
-      "pushed_at": "2026-03-20T10:45:30Z",
+      "updated_at": "2026-03-21T01:11:27Z",
+      "pushed_at": "2026-03-21T00:10:06Z",
       "owner": {
         "login": "mem0ai",
         "avatar_url": "https://avatars.githubusercontent.com/u/137054526?v=4",
@@ -1590,85 +1590,15 @@
       "fork": false
     },
     {
-      "id": 551376520,
-      "name": "Pake",
-      "full_name": "tw93/Pake",
-      "description": "🤱🏻 Turn any webpage into a desktop app with one command.",
-      "html_url": "https://github.com/tw93/Pake",
-      "stargazers_count": 46748,
-      "forks_count": 9157,
-      "open_issues_count": 1,
-      "watchers_count": 46748,
-      "language": "Rust",
-      "topics": [
-        "chatgpt",
-        "claude",
-        "desktop",
-        "gemini",
-        "hight-performance",
-        "linux",
-        "macos",
-        "no-electron",
-        "package",
-        "rust",
-        "tauri",
-        "windows",
-        "youtube"
-      ],
-      "created_at": "2022-10-14T09:32:57Z",
-      "updated_at": "2026-03-20T12:30:08Z",
-      "pushed_at": "2026-03-14T15:09:48Z",
-      "owner": {
-        "login": "tw93",
-        "avatar_url": "https://avatars.githubusercontent.com/u/8736212?v=4",
-        "type": "User"
-      },
-      "license": "MIT",
-      "homepage": "https://x.com/twitter/status/2025197688422339010",
-      "archived": false,
-      "fork": false
-    },
-    {
-      "id": 710601088,
-      "name": "crewAI",
-      "full_name": "crewAIInc/crewAI",
-      "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
-      "html_url": "https://github.com/crewAIInc/crewAI",
-      "stargazers_count": 46664,
-      "forks_count": 6301,
-      "open_issues_count": 420,
-      "watchers_count": 46664,
-      "language": "Python",
-      "topics": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "aiagentframework",
-        "llms"
-      ],
-      "created_at": "2023-10-27T03:26:59Z",
-      "updated_at": "2026-03-20T12:14:37Z",
-      "pushed_at": "2026-03-20T12:08:02Z",
-      "owner": {
-        "login": "crewAIInc",
-        "avatar_url": "https://avatars.githubusercontent.com/u/170677839?v=4",
-        "type": "Organization"
-      },
-      "license": "MIT",
-      "homepage": "https://crewai.com",
-      "archived": false,
-      "fork": false
-    },
-    {
       "id": 1106996539,
       "name": "ui-ux-pro-max-skill",
       "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "html_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stargazers_count": 46589,
-      "forks_count": 4523,
-      "open_issues_count": 81,
-      "watchers_count": 46589,
+      "stargazers_count": 46856,
+      "forks_count": 4544,
+      "open_issues_count": 82,
+      "watchers_count": 46856,
       "language": "Python",
       "topics": [
         "ai-skills",
@@ -1692,7 +1622,7 @@
         "windsurf-ai"
       ],
       "created_at": "2025-11-30T11:36:31Z",
-      "updated_at": "2026-03-20T12:34:55Z",
+      "updated_at": "2026-03-21T01:40:30Z",
       "pushed_at": "2026-03-10T06:05:57Z",
       "owner": {
         "login": "nextlevelbuilder",
@@ -1705,15 +1635,85 @@
       "fork": false
     },
     {
+      "id": 551376520,
+      "name": "Pake",
+      "full_name": "tw93/Pake",
+      "description": "🤱🏻 Turn any webpage into a desktop app with one command.",
+      "html_url": "https://github.com/tw93/Pake",
+      "stargazers_count": 46757,
+      "forks_count": 9159,
+      "open_issues_count": 1,
+      "watchers_count": 46757,
+      "language": "Rust",
+      "topics": [
+        "chatgpt",
+        "claude",
+        "desktop",
+        "gemini",
+        "hight-performance",
+        "linux",
+        "macos",
+        "no-electron",
+        "package",
+        "rust",
+        "tauri",
+        "windows",
+        "youtube"
+      ],
+      "created_at": "2022-10-14T09:32:57Z",
+      "updated_at": "2026-03-21T00:37:28Z",
+      "pushed_at": "2026-03-14T15:09:48Z",
+      "owner": {
+        "login": "tw93",
+        "avatar_url": "https://avatars.githubusercontent.com/u/8736212?v=4",
+        "type": "User"
+      },
+      "license": "MIT",
+      "homepage": "https://x.com/twitter/status/2025197688422339010",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "id": 710601088,
+      "name": "crewAI",
+      "full_name": "crewAIInc/crewAI",
+      "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
+      "html_url": "https://github.com/crewAIInc/crewAI",
+      "stargazers_count": 46694,
+      "forks_count": 6310,
+      "open_issues_count": 431,
+      "watchers_count": 46694,
+      "language": "Python",
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "aiagentframework",
+        "llms"
+      ],
+      "created_at": "2023-10-27T03:26:59Z",
+      "updated_at": "2026-03-21T01:39:06Z",
+      "pushed_at": "2026-03-20T21:42:29Z",
+      "owner": {
+        "login": "crewAIInc",
+        "avatar_url": "https://avatars.githubusercontent.com/u/170677839?v=4",
+        "type": "Organization"
+      },
+      "license": "MIT",
+      "homepage": "https://crewai.com",
+      "archived": false,
+      "fork": false
+    },
+    {
       "id": 1078079172,
       "name": "awesome-claude-skills",
       "full_name": "ComposioHQ/awesome-claude-skills",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "html_url": "https://github.com/ComposioHQ/awesome-claude-skills",
-      "stargazers_count": 46321,
-      "forks_count": 4711,
-      "open_issues_count": 341,
-      "watchers_count": 46321,
+      "stargazers_count": 46453,
+      "forks_count": 4721,
+      "open_issues_count": 344,
+      "watchers_count": 46453,
       "language": "Python",
       "topics": [
         "agent-skills",
@@ -1733,7 +1733,7 @@
         "workflow-automation"
       ],
       "created_at": "2025-10-17T07:15:01Z",
-      "updated_at": "2026-03-20T12:29:44Z",
+      "updated_at": "2026-03-21T01:26:37Z",
       "pushed_at": "2026-02-19T06:22:06Z",
       "owner": {
         "login": "ComposioHQ",
@@ -1751,14 +1751,14 @@
       "full_name": "karpathy/autoresearch",
       "description": "AI agents running research on single-GPU nanochat training automatically",
       "html_url": "https://github.com/karpathy/autoresearch",
-      "stargazers_count": 44607,
-      "forks_count": 6181,
+      "stargazers_count": 45977,
+      "forks_count": 6384,
       "open_issues_count": 142,
-      "watchers_count": 44607,
+      "watchers_count": 45977,
       "language": "Python",
       "topics": [],
       "created_at": "2026-03-06T22:00:43Z",
-      "updated_at": "2026-03-20T12:33:42Z",
+      "updated_at": "2026-03-21T01:44:00Z",
       "pushed_at": "2026-03-16T18:43:26Z",
       "owner": {
         "login": "karpathy",
@@ -1776,10 +1776,10 @@
       "full_name": "zhayujie/chatgpt-on-wechat",
       "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企微、QQ、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
       "html_url": "https://github.com/zhayujie/chatgpt-on-wechat",
-      "stargazers_count": 42323,
-      "forks_count": 9839,
-      "open_issues_count": 347,
-      "watchers_count": 42323,
+      "stargazers_count": 42329,
+      "forks_count": 9840,
+      "open_issues_count": 348,
+      "watchers_count": 42329,
       "language": "Python",
       "topics": [
         "ai",
@@ -1803,7 +1803,7 @@
         "wechat"
       ],
       "created_at": "2022-08-07T08:33:41Z",
-      "updated_at": "2026-03-20T12:23:51Z",
+      "updated_at": "2026-03-21T01:40:33Z",
       "pushed_at": "2026-03-20T09:56:16Z",
       "owner": {
         "login": "zhayujie",
@@ -1821,10 +1821,10 @@
       "full_name": "Aider-AI/aider",
       "description": "aider is AI pair programming in your terminal",
       "html_url": "https://github.com/Aider-AI/aider",
-      "stargazers_count": 42180,
-      "forks_count": 4059,
-      "open_issues_count": 1447,
-      "watchers_count": 42180,
+      "stargazers_count": 42191,
+      "forks_count": 4052,
+      "open_issues_count": 1448,
+      "watchers_count": 42191,
       "language": "Python",
       "topics": [
         "anthropic",
@@ -1842,7 +1842,7 @@
         "sonnet"
       ],
       "created_at": "2023-05-09T18:57:49Z",
-      "updated_at": "2026-03-20T12:33:37Z",
+      "updated_at": "2026-03-21T01:32:56Z",
       "pushed_at": "2026-03-17T01:21:34Z",
       "owner": {
         "login": "Aider-AI",
@@ -1855,52 +1855,15 @@
       "fork": false
     },
     {
-      "id": 805155266,
-      "name": "cherry-studio",
-      "full_name": "CherryHQ/cherry-studio",
-      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
-      "html_url": "https://github.com/CherryHQ/cherry-studio",
-      "stargazers_count": 41878,
-      "forks_count": 3890,
-      "open_issues_count": 756,
-      "watchers_count": 41878,
-      "language": "TypeScript",
-      "topics": [
-        "ai-agent",
-        "claude-code",
-        "code-agent",
-        "codex",
-        "openclaw",
-        "opencode",
-        "shannon",
-        "skills",
-        "superpowers",
-        "superpowers-core-skills",
-        "vibe-coding"
-      ],
-      "created_at": "2024-05-24T01:56:26Z",
-      "updated_at": "2026-03-20T12:12:01Z",
-      "pushed_at": "2026-03-20T11:42:35Z",
-      "owner": {
-        "login": "CherryHQ",
-        "avatar_url": "https://avatars.githubusercontent.com/u/187777663?v=4",
-        "type": "Organization"
-      },
-      "license": "AGPL-3.0",
-      "homepage": "https://cherry-ai.com",
-      "archived": false,
-      "fork": false
-    },
-    {
       "id": 1108837393,
       "name": "oh-my-openagent",
       "full_name": "code-yeongyu/oh-my-openagent",
       "description": "omo; the best agent harness - previously oh-my-opencode",
       "html_url": "https://github.com/code-yeongyu/oh-my-openagent",
-      "stargazers_count": 41813,
-      "forks_count": 3119,
-      "open_issues_count": 432,
-      "watchers_count": 41813,
+      "stargazers_count": 41936,
+      "forks_count": 3126,
+      "open_issues_count": 437,
+      "watchers_count": 41936,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -1921,7 +1884,7 @@
         "typescript"
       ],
       "created_at": "2025-12-03T01:40:05Z",
-      "updated_at": "2026-03-20T12:33:38Z",
+      "updated_at": "2026-03-21T01:41:27Z",
       "pushed_at": "2026-03-20T07:34:31Z",
       "owner": {
         "login": "code-yeongyu",
@@ -1934,15 +1897,52 @@
       "fork": false
     },
     {
+      "id": 805155266,
+      "name": "cherry-studio",
+      "full_name": "CherryHQ/cherry-studio",
+      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+      "html_url": "https://github.com/CherryHQ/cherry-studio",
+      "stargazers_count": 41908,
+      "forks_count": 3892,
+      "open_issues_count": 762,
+      "watchers_count": 41908,
+      "language": "TypeScript",
+      "topics": [
+        "ai-agent",
+        "claude-code",
+        "code-agent",
+        "codex",
+        "openclaw",
+        "opencode",
+        "shannon",
+        "skills",
+        "superpowers",
+        "superpowers-core-skills",
+        "vibe-coding"
+      ],
+      "created_at": "2024-05-24T01:56:26Z",
+      "updated_at": "2026-03-21T01:37:26Z",
+      "pushed_at": "2026-03-21T00:41:11Z",
+      "owner": {
+        "login": "CherryHQ",
+        "avatar_url": "https://avatars.githubusercontent.com/u/187777663?v=4",
+        "type": "Organization"
+      },
+      "license": "AGPL-3.0",
+      "homepage": "https://cherry-ai.com",
+      "archived": false,
+      "fork": false
+    },
+    {
       "id": 679506386,
       "name": "jan",
       "full_name": "janhq/jan",
       "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
       "html_url": "https://github.com/janhq/jan",
-      "stargazers_count": 41160,
-      "forks_count": 2608,
-      "open_issues_count": 277,
-      "watchers_count": 41160,
+      "stargazers_count": 41168,
+      "forks_count": 2610,
+      "open_issues_count": 279,
+      "watchers_count": 41168,
       "language": "TypeScript",
       "topics": [
         "chatgpt",
@@ -1955,7 +1955,7 @@
         "tauri"
       ],
       "created_at": "2023-08-17T02:17:10Z",
-      "updated_at": "2026-03-20T11:27:10Z",
+      "updated_at": "2026-03-21T01:15:25Z",
       "pushed_at": "2026-03-20T09:08:26Z",
       "owner": {
         "login": "janhq",
@@ -1973,10 +1973,10 @@
       "full_name": "BerriAI/litellm",
       "description": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]",
       "html_url": "https://github.com/BerriAI/litellm",
-      "stargazers_count": 39750,
-      "forks_count": 6575,
-      "open_issues_count": 1951,
-      "watchers_count": 39750,
+      "stargazers_count": 39787,
+      "forks_count": 6585,
+      "open_issues_count": 1968,
+      "watchers_count": 39787,
       "language": "Python",
       "topics": [
         "ai-gateway",
@@ -1995,8 +1995,8 @@
         "vertex-ai"
       ],
       "created_at": "2023-07-27T00:09:52Z",
-      "updated_at": "2026-03-20T12:24:28Z",
-      "pushed_at": "2026-03-20T12:12:02Z",
+      "updated_at": "2026-03-21T01:40:09Z",
+      "pushed_at": "2026-03-21T01:19:40Z",
       "owner": {
         "login": "BerriAI",
         "avatar_url": "https://avatars.githubusercontent.com/u/121462774?v=4",
@@ -2013,10 +2013,10 @@
       "full_name": "666ghj/BettaFish",
       "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
       "html_url": "https://github.com/666ghj/BettaFish",
-      "stargazers_count": 39603,
-      "forks_count": 7388,
+      "stargazers_count": 39618,
+      "forks_count": 7393,
       "open_issues_count": 55,
-      "watchers_count": 39603,
+      "watchers_count": 39618,
       "language": "Python",
       "topics": [
         "agent-framework",
@@ -2031,7 +2031,7 @@
         "sentiment-analysis"
       ],
       "created_at": "2024-07-01T13:11:38Z",
-      "updated_at": "2026-03-20T12:31:46Z",
+      "updated_at": "2026-03-21T01:39:18Z",
       "pushed_at": "2026-03-13T16:22:40Z",
       "owner": {
         "login": "666ghj",
@@ -2049,10 +2049,10 @@
       "full_name": "microsoft/qlib",
       "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
       "html_url": "https://github.com/microsoft/qlib",
-      "stargazers_count": 39086,
-      "forks_count": 6089,
+      "stargazers_count": 39101,
+      "forks_count": 6093,
       "open_issues_count": 369,
-      "watchers_count": 39086,
+      "watchers_count": 39101,
       "language": "Python",
       "topics": [
         "algorithmic-trading",
@@ -2075,7 +2075,7 @@
         "stock-data"
       ],
       "created_at": "2020-08-14T06:46:00Z",
-      "updated_at": "2026-03-20T12:19:37Z",
+      "updated_at": "2026-03-21T01:27:25Z",
       "pushed_at": "2026-03-10T12:45:41Z",
       "owner": {
         "login": "microsoft",
@@ -2093,10 +2093,10 @@
       "full_name": "chatboxai/chatbox",
       "description": "Powerful AI Client",
       "html_url": "https://github.com/chatboxai/chatbox",
-      "stargazers_count": 39049,
-      "forks_count": 3951,
-      "open_issues_count": 1081,
-      "watchers_count": 39049,
+      "stargazers_count": 39052,
+      "forks_count": 3950,
+      "open_issues_count": 1083,
+      "watchers_count": 39052,
       "language": "TypeScript",
       "topics": [
         "assistant",
@@ -2112,7 +2112,7 @@
         "openai"
       ],
       "created_at": "2023-03-06T12:22:15Z",
-      "updated_at": "2026-03-20T11:30:56Z",
+      "updated_at": "2026-03-20T23:31:33Z",
       "pushed_at": "2026-03-16T09:10:32Z",
       "owner": {
         "login": "chatboxai",
@@ -2130,10 +2130,10 @@
       "full_name": "2noise/ChatTTS",
       "description": "A generative speech model for daily dialogue.",
       "html_url": "https://github.com/2noise/ChatTTS",
-      "stargazers_count": 38954,
-      "forks_count": 4227,
+      "stargazers_count": 38958,
+      "forks_count": 4229,
       "open_issues_count": 65,
-      "watchers_count": 38954,
+      "watchers_count": 38958,
       "language": "Python",
       "topics": [
         "agent",
@@ -2155,7 +2155,7 @@
         "tts"
       ],
       "created_at": "2024-05-27T18:26:49Z",
-      "updated_at": "2026-03-20T11:27:54Z",
+      "updated_at": "2026-03-20T23:58:20Z",
       "pushed_at": "2026-01-18T05:30:01Z",
       "owner": {
         "login": "2noise",
@@ -2174,8 +2174,8 @@
       "description": "Query Engine for AI Analytics: Build self-reasoning agents across all your live data",
       "html_url": "https://github.com/mindsdb/mindsdb",
       "stargazers_count": 38798,
-      "forks_count": 6151,
-      "open_issues_count": 158,
+      "forks_count": 6152,
+      "open_issues_count": 150,
       "watchers_count": 38798,
       "language": "Python",
       "topics": [
@@ -2195,8 +2195,8 @@
         "rag"
       ],
       "created_at": "2018-08-02T17:56:45Z",
-      "updated_at": "2026-03-20T12:07:53Z",
-      "pushed_at": "2026-03-20T12:34:08Z",
+      "updated_at": "2026-03-21T00:29:36Z",
+      "pushed_at": "2026-03-20T23:16:24Z",
       "owner": {
         "login": "mindsdb",
         "avatar_url": "https://avatars.githubusercontent.com/u/31035808?v=4",
@@ -2213,10 +2213,10 @@
       "full_name": "thedotmack/claude-mem",
       "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
       "html_url": "https://github.com/thedotmack/claude-mem",
-      "stargazers_count": 38619,
-      "forks_count": 2797,
-      "open_issues_count": 132,
-      "watchers_count": 38619,
+      "stargazers_count": 38775,
+      "forks_count": 2812,
+      "open_issues_count": 140,
+      "watchers_count": 38775,
       "language": "JavaScript",
       "topics": [
         "ai",
@@ -2241,7 +2241,7 @@
         "supermemory"
       ],
       "created_at": "2025-08-31T20:50:03Z",
-      "updated_at": "2026-03-20T12:34:34Z",
+      "updated_at": "2026-03-21T01:29:59Z",
       "pushed_at": "2026-03-19T19:11:08Z",
       "owner": {
         "login": "thedotmack",
@@ -2259,10 +2259,10 @@
       "full_name": "chatchat-space/Langchain-Chatchat",
       "description": "Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain ",
       "html_url": "https://github.com/chatchat-space/Langchain-Chatchat",
-      "stargazers_count": 37574,
-      "forks_count": 6185,
-      "open_issues_count": 19,
-      "watchers_count": 37574,
+      "stargazers_count": 37578,
+      "forks_count": 6184,
+      "open_issues_count": 18,
+      "watchers_count": 37578,
       "language": "Python",
       "topics": [
         "chatbot",
@@ -2287,7 +2287,7 @@
         "xinference"
       ],
       "created_at": "2023-03-31T12:12:45Z",
-      "updated_at": "2026-03-20T12:24:32Z",
+      "updated_at": "2026-03-20T16:44:26Z",
       "pushed_at": "2025-11-10T09:27:42Z",
       "owner": {
         "login": "chatchat-space",
@@ -2305,10 +2305,10 @@
       "full_name": "chatanywhere/GPT_API_free",
       "description": "Free ChatGPT&DeepSeek API Key，免费ChatGPT&DeepSeek API。免费接入DeepSeek API和GPT4 API，支持 gpt | deepseek | claude | gemini | grok 等排名靠前的常用大模型。",
       "html_url": "https://github.com/chatanywhere/GPT_API_free",
-      "stargazers_count": 36801,
-      "forks_count": 2573,
+      "stargazers_count": 36797,
+      "forks_count": 2567,
       "open_issues_count": 64,
-      "watchers_count": 36801,
+      "watchers_count": 36797,
       "language": "Python",
       "topics": [
         "api",
@@ -2320,7 +2320,7 @@
         "grok"
       ],
       "created_at": "2023-04-23T12:42:08Z",
-      "updated_at": "2026-03-20T12:23:25Z",
+      "updated_at": "2026-03-21T00:40:05Z",
       "pushed_at": "2026-03-06T17:42:15Z",
       "owner": {
         "login": "chatanywhere",
@@ -2338,10 +2338,10 @@
       "full_name": "reworkd/AgentGPT",
       "description": "🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.",
       "html_url": "https://github.com/reworkd/AgentGPT",
-      "stargazers_count": 35858,
-      "forks_count": 9427,
+      "stargazers_count": 35856,
+      "forks_count": 9426,
       "open_issues_count": 219,
-      "watchers_count": 35858,
+      "watchers_count": 35856,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -2361,7 +2361,7 @@
         "t3-stack"
       ],
       "created_at": "2023-04-07T02:29:19Z",
-      "updated_at": "2026-03-20T11:59:40Z",
+      "updated_at": "2026-03-21T01:31:26Z",
       "pushed_at": "2025-04-29T01:19:32Z",
       "owner": {
         "login": "reworkd",
@@ -2379,10 +2379,10 @@
       "full_name": "danny-avila/LibreChat",
       "description": "Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active.",
       "html_url": "https://github.com/danny-avila/LibreChat",
-      "stargazers_count": 34801,
-      "forks_count": 7046,
-      "open_issues_count": 460,
-      "watchers_count": 34801,
+      "stargazers_count": 34816,
+      "forks_count": 7047,
+      "open_issues_count": 453,
+      "watchers_count": 34816,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -2407,8 +2407,8 @@
         "webui"
       ],
       "created_at": "2023-02-12T01:06:52Z",
-      "updated_at": "2026-03-20T12:35:02Z",
-      "pushed_at": "2026-03-20T05:12:49Z",
+      "updated_at": "2026-03-21T01:28:13Z",
+      "pushed_at": "2026-03-20T23:57:32Z",
       "owner": {
         "login": "danny-avila",
         "avatar_url": "https://avatars.githubusercontent.com/u/110412045?v=4",
@@ -2425,10 +2425,10 @@
       "full_name": "asgeirtj/system_prompts_leaks",
       "description": "Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude & Gemini",
       "html_url": "https://github.com/asgeirtj/system_prompts_leaks",
-      "stargazers_count": 34708,
-      "forks_count": 5582,
+      "stargazers_count": 34735,
+      "forks_count": 5587,
       "open_issues_count": 17,
-      "watchers_count": 34708,
+      "watchers_count": 34735,
       "language": "HTML",
       "topics": [
         "ai",
@@ -2447,7 +2447,7 @@
         "prompts"
       ],
       "created_at": "2025-05-03T02:43:56Z",
-      "updated_at": "2026-03-20T12:11:50Z",
+      "updated_at": "2026-03-21T00:53:57Z",
       "pushed_at": "2026-03-15T16:25:46Z",
       "owner": {
         "login": "asgeirtj",
@@ -2465,10 +2465,10 @@
       "full_name": "shareAI-lab/learn-claude-code",
       "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1",
       "html_url": "https://github.com/shareAI-lab/learn-claude-code",
-      "stargazers_count": 34431,
-      "forks_count": 5566,
-      "open_issues_count": 57,
-      "watchers_count": 34431,
+      "stargazers_count": 34695,
+      "forks_count": 5588,
+      "open_issues_count": 59,
+      "watchers_count": 34695,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -2483,7 +2483,7 @@
         "tutorial"
       ],
       "created_at": "2025-06-29T15:34:15Z",
-      "updated_at": "2026-03-20T12:31:36Z",
+      "updated_at": "2026-03-21T01:41:21Z",
       "pushed_at": "2026-03-17T17:19:48Z",
       "owner": {
         "login": "shareAI-lab",
@@ -2501,10 +2501,10 @@
       "full_name": "TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "html_url": "https://github.com/TauricResearch/TradingAgents",
-      "stargazers_count": 33527,
-      "forks_count": 6471,
-      "open_issues_count": 249,
-      "watchers_count": 33527,
+      "stargazers_count": 34134,
+      "forks_count": 6523,
+      "open_issues_count": 240,
+      "watchers_count": 34134,
       "language": "Python",
       "topics": [
         "agent",
@@ -2514,7 +2514,7 @@
         "trading"
       ],
       "created_at": "2024-12-28T03:31:08Z",
-      "updated_at": "2026-03-20T12:33:32Z",
+      "updated_at": "2026-03-21T01:42:07Z",
       "pushed_at": "2026-03-15T23:53:04Z",
       "owner": {
         "login": "TauricResearch",
@@ -2532,10 +2532,10 @@
       "full_name": "khoj-ai/khoj",
       "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
       "html_url": "https://github.com/khoj-ai/khoj",
-      "stargazers_count": 33518,
+      "stargazers_count": 33528,
       "forks_count": 2073,
       "open_issues_count": 93,
-      "watchers_count": 33518,
+      "watchers_count": 33528,
       "language": "Python",
       "topics": [
         "agent",
@@ -2560,7 +2560,7 @@
         "whatsapp-ai"
       ],
       "created_at": "2021-08-16T01:48:44Z",
-      "updated_at": "2026-03-20T10:37:09Z",
+      "updated_at": "2026-03-21T01:39:27Z",
       "pushed_at": "2026-03-19T19:28:44Z",
       "owner": {
         "login": "khoj-ai",
@@ -2578,17 +2578,17 @@
       "full_name": "block/goose",
       "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
       "html_url": "https://github.com/block/goose",
-      "stargazers_count": 33310,
-      "forks_count": 3084,
-      "open_issues_count": 323,
-      "watchers_count": 33310,
+      "stargazers_count": 33341,
+      "forks_count": 3090,
+      "open_issues_count": 312,
+      "watchers_count": 33341,
       "language": "Rust",
       "topics": [
         "mcp"
       ],
       "created_at": "2024-08-23T19:03:36Z",
-      "updated_at": "2026-03-20T12:10:14Z",
-      "pushed_at": "2026-03-20T12:30:38Z",
+      "updated_at": "2026-03-21T01:28:22Z",
+      "pushed_at": "2026-03-21T00:52:01Z",
       "owner": {
         "login": "block",
         "avatar_url": "https://avatars.githubusercontent.com/u/185116535?v=4",
@@ -2605,10 +2605,10 @@
       "full_name": "TabbyML/tabby",
       "description": "Self-hosted AI coding assistant",
       "html_url": "https://github.com/TabbyML/tabby",
-      "stargazers_count": 33028,
+      "stargazers_count": 33029,
       "forks_count": 1691,
       "open_issues_count": 299,
-      "watchers_count": 33028,
+      "watchers_count": 33029,
       "language": "Rust",
       "topics": [
         "ai",
@@ -2622,7 +2622,7 @@
         "llms"
       ],
       "created_at": "2023-03-16T09:18:01Z",
-      "updated_at": "2026-03-20T10:28:10Z",
+      "updated_at": "2026-03-20T23:09:26Z",
       "pushed_at": "2026-03-02T20:08:28Z",
       "owner": {
         "login": "TabbyML",
@@ -2640,10 +2640,10 @@
       "full_name": "Fission-AI/OpenSpec",
       "description": "Spec-driven development (SDD) for AI coding assistants.",
       "html_url": "https://github.com/Fission-AI/OpenSpec",
-      "stargazers_count": 32606,
-      "forks_count": 2151,
+      "stargazers_count": 32725,
+      "forks_count": 2163,
       "open_issues_count": 309,
-      "watchers_count": 32606,
+      "watchers_count": 32725,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -2658,7 +2658,7 @@
         "specification"
       ],
       "created_at": "2025-08-05T10:37:45Z",
-      "updated_at": "2026-03-20T12:23:10Z",
+      "updated_at": "2026-03-21T01:31:25Z",
       "pushed_at": "2026-03-11T07:54:38Z",
       "owner": {
         "login": "Fission-AI",
@@ -2676,10 +2676,10 @@
       "full_name": "patchy631/ai-engineering-hub",
       "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
       "html_url": "https://github.com/patchy631/ai-engineering-hub",
-      "stargazers_count": 32328,
-      "forks_count": 5333,
+      "stargazers_count": 32389,
+      "forks_count": 5351,
       "open_issues_count": 124,
-      "watchers_count": 32328,
+      "watchers_count": 32389,
       "language": "Jupyter Notebook",
       "topics": [
         "agents",
@@ -2690,7 +2690,7 @@
         "rag"
       ],
       "created_at": "2024-10-21T10:43:24Z",
-      "updated_at": "2026-03-20T11:58:17Z",
+      "updated_at": "2026-03-21T01:41:52Z",
       "pushed_at": "2026-03-13T13:02:07Z",
       "owner": {
         "login": "patchy631",
@@ -2708,10 +2708,10 @@
       "full_name": "PostHog/posthog",
       "description": "🦔 PostHog is an all-in-one developer platform for building successful products. We offer product analytics, web analytics, session replay, error tracking, feature flags, experimentation, surveys, data warehouse, a CDP, and an AI product assistant to help debug your code, ship features faster, and keep all your usage and customer data in one stack.",
       "html_url": "https://github.com/PostHog/posthog",
-      "stargazers_count": 32138,
+      "stargazers_count": 32148,
       "forks_count": 2418,
-      "open_issues_count": 3248,
-      "watchers_count": 32138,
+      "open_issues_count": 3255,
+      "watchers_count": 32148,
       "language": "Python",
       "topics": [
         "ab-testing",
@@ -2731,8 +2731,8 @@
         "web-analytics"
       ],
       "created_at": "2020-01-23T22:46:58Z",
-      "updated_at": "2026-03-20T12:31:51Z",
-      "pushed_at": "2026-03-20T12:35:17Z",
+      "updated_at": "2026-03-21T01:08:04Z",
+      "pushed_at": "2026-03-21T01:36:22Z",
       "owner": {
         "login": "PostHog",
         "avatar_url": "https://avatars.githubusercontent.com/u/60330232?v=4",
@@ -2749,10 +2749,10 @@
       "full_name": "bytedance/deer-flow",
       "description": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skills and subagents, it handles different levels of tasks that could take minutes to hours.",
       "html_url": "https://github.com/bytedance/deer-flow",
-      "stargazers_count": 32005,
-      "forks_count": 3875,
-      "open_issues_count": 270,
-      "watchers_count": 32005,
+      "stargazers_count": 32068,
+      "forks_count": 3884,
+      "open_issues_count": 273,
+      "watchers_count": 32068,
       "language": "Python",
       "topics": [
         "agent",
@@ -2776,8 +2776,8 @@
         "typescript"
       ],
       "created_at": "2025-05-07T02:50:19Z",
-      "updated_at": "2026-03-20T12:32:43Z",
-      "pushed_at": "2026-03-20T09:29:04Z",
+      "updated_at": "2026-03-21T01:39:01Z",
+      "pushed_at": "2026-03-20T16:20:56Z",
       "owner": {
         "login": "bytedance",
         "avatar_url": "https://avatars.githubusercontent.com/u/4158466?v=4",
@@ -2794,10 +2794,10 @@
       "full_name": "wshobson/agents",
       "description": "Intelligent automation and multi-agent orchestration for Claude Code",
       "html_url": "https://github.com/wshobson/agents",
-      "stargazers_count": 31804,
-      "forks_count": 3473,
+      "stargazers_count": 31846,
+      "forks_count": 3481,
       "open_issues_count": 5,
-      "watchers_count": 31804,
+      "watchers_count": 31846,
       "language": "Python",
       "topics": [
         "agents",
@@ -2822,7 +2822,7 @@
         "workflows"
       ],
       "created_at": "2025-07-24T23:28:14Z",
-      "updated_at": "2026-03-20T12:19:53Z",
+      "updated_at": "2026-03-21T01:39:29Z",
       "pushed_at": "2026-03-17T15:00:12Z",
       "owner": {
         "login": "wshobson",
@@ -2840,14 +2840,14 @@
       "full_name": "OpenBMB/ChatDev",
       "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
       "html_url": "https://github.com/OpenBMB/ChatDev",
-      "stargazers_count": 31739,
-      "forks_count": 3925,
+      "stargazers_count": 31737,
+      "forks_count": 3923,
       "open_issues_count": 41,
-      "watchers_count": 31739,
+      "watchers_count": 31737,
       "language": "Python",
       "topics": [],
       "created_at": "2023-08-28T02:18:13Z",
-      "updated_at": "2026-03-20T11:36:36Z",
+      "updated_at": "2026-03-21T01:16:04Z",
       "pushed_at": "2026-03-19T00:52:00Z",
       "owner": {
         "login": "OpenBMB",
@@ -2865,10 +2865,10 @@
       "full_name": "CopilotKit/CopilotKit",
       "description": "The Frontend Stack for Agents & Generative UI. React + Angular.  Makers of the AG-UI Protocol",
       "html_url": "https://github.com/CopilotKit/CopilotKit",
-      "stargazers_count": 29600,
-      "forks_count": 3841,
-      "open_issues_count": 591,
-      "watchers_count": 29600,
+      "stargazers_count": 29614,
+      "forks_count": 3844,
+      "open_issues_count": 594,
+      "watchers_count": 29614,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -2893,8 +2893,8 @@
         "typescript"
       ],
       "created_at": "2023-06-19T04:08:31Z",
-      "updated_at": "2026-03-20T12:29:08Z",
-      "pushed_at": "2026-03-20T09:12:31Z",
+      "updated_at": "2026-03-21T01:25:44Z",
+      "pushed_at": "2026-03-20T23:42:59Z",
       "owner": {
         "login": "CopilotKit",
         "avatar_url": "https://avatars.githubusercontent.com/u/131273140?v=4",
@@ -2911,10 +2911,10 @@
       "full_name": "hesreallyhim/awesome-claude-code",
       "description": "A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic",
       "html_url": "https://github.com/hesreallyhim/awesome-claude-code",
-      "stargazers_count": 29340,
-      "forks_count": 1981,
-      "open_issues_count": 86,
-      "watchers_count": 29340,
+      "stargazers_count": 29440,
+      "forks_count": 1992,
+      "open_issues_count": 89,
+      "watchers_count": 29440,
       "language": "Python",
       "topics": [
         "agent-skills",
@@ -2937,8 +2937,8 @@
         "llm"
       ],
       "created_at": "2025-04-19T20:55:59Z",
-      "updated_at": "2026-03-20T12:28:39Z",
-      "pushed_at": "2026-03-20T12:17:21Z",
+      "updated_at": "2026-03-21T01:25:45Z",
+      "pushed_at": "2026-03-21T00:32:25Z",
       "owner": {
         "login": "hesreallyhim",
         "avatar_url": "https://avatars.githubusercontent.com/u/172150522?v=4",
@@ -2955,10 +2955,10 @@
       "full_name": "zeroclaw-labs/zeroclaw",
       "description": "Fast, small, and fully autonomous AI personal assistant infrastructure, ANY OS, ANY PLATFORM — deploy anywhere, swap anything 🦀",
       "html_url": "https://github.com/zeroclaw-labs/zeroclaw",
-      "stargazers_count": 28121,
-      "forks_count": 3813,
-      "open_issues_count": 293,
-      "watchers_count": 28121,
+      "stargazers_count": 28177,
+      "forks_count": 3828,
+      "open_issues_count": 284,
+      "watchers_count": 28177,
       "language": "Rust",
       "topics": [
         "agent",
@@ -2971,8 +2971,8 @@
         "zeroclaw"
       ],
       "created_at": "2026-02-13T08:56:04Z",
-      "updated_at": "2026-03-20T12:31:38Z",
-      "pushed_at": "2026-03-20T10:12:41Z",
+      "updated_at": "2026-03-21T01:42:42Z",
+      "pushed_at": "2026-03-20T23:12:10Z",
       "owner": {
         "login": "zeroclaw-labs",
         "avatar_url": "https://avatars.githubusercontent.com/u/261820148?v=4",
@@ -2989,10 +2989,10 @@
       "full_name": "simstudioai/sim",
       "description": "Build, deploy, and orchestrate AI agents. Sim is the central intelligence layer for your AI workforce.",
       "html_url": "https://github.com/simstudioai/sim",
-      "stargazers_count": 27070,
-      "forks_count": 3435,
-      "open_issues_count": 219,
-      "watchers_count": 27070,
+      "stargazers_count": 27092,
+      "forks_count": 3437,
+      "open_issues_count": 217,
+      "watchers_count": 27092,
       "language": "TypeScript",
       "topics": [
         "agent-workflow",
@@ -3015,8 +3015,8 @@
         "typescript"
       ],
       "created_at": "2025-01-05T22:47:49Z",
-      "updated_at": "2026-03-20T12:09:45Z",
-      "pushed_at": "2026-03-20T07:09:14Z",
+      "updated_at": "2026-03-21T01:21:33Z",
+      "pushed_at": "2026-03-21T00:29:50Z",
       "owner": {
         "login": "simstudioai",
         "avatar_url": "https://avatars.githubusercontent.com/u/199344406?v=4",
@@ -3033,10 +3033,10 @@
       "full_name": "langchain-ai/langgraph",
       "description": "Build resilient language agents as graphs.",
       "html_url": "https://github.com/langchain-ai/langgraph",
-      "stargazers_count": 26975,
-      "forks_count": 4648,
-      "open_issues_count": 455,
-      "watchers_count": 26975,
+      "stargazers_count": 27010,
+      "forks_count": 4653,
+      "open_issues_count": 456,
+      "watchers_count": 27010,
       "language": "Python",
       "topics": [
         "agents",
@@ -3059,8 +3059,8 @@
         "rag"
       ],
       "created_at": "2023-08-09T18:33:12Z",
-      "updated_at": "2026-03-20T12:31:12Z",
-      "pushed_at": "2026-03-20T00:41:36Z",
+      "updated_at": "2026-03-21T01:39:01Z",
+      "pushed_at": "2026-03-20T22:12:33Z",
       "owner": {
         "login": "langchain-ai",
         "avatar_url": "https://avatars.githubusercontent.com/u/126733545?v=4",
@@ -3077,10 +3077,10 @@
       "full_name": "huggingface/agents-course",
       "description": "This repository contains the Hugging Face Agents Course. ",
       "html_url": "https://github.com/huggingface/agents-course",
-      "stargazers_count": 26767,
+      "stargazers_count": 26790,
       "forks_count": 1902,
       "open_issues_count": 114,
-      "watchers_count": 26767,
+      "watchers_count": 26790,
       "language": "MDX",
       "topics": [
         "agentic-ai",
@@ -3092,7 +3092,7 @@
         "smolagents"
       ],
       "created_at": "2025-01-16T19:50:22Z",
-      "updated_at": "2026-03-20T12:33:36Z",
+      "updated_at": "2026-03-21T01:34:28Z",
       "pushed_at": "2026-03-02T17:46:51Z",
       "owner": {
         "login": "huggingface",
@@ -3110,10 +3110,10 @@
       "full_name": "e2b-dev/awesome-ai-agents",
       "description": "A list of AI autonomous agents",
       "html_url": "https://github.com/e2b-dev/awesome-ai-agents",
-      "stargazers_count": 26603,
-      "forks_count": 2458,
-      "open_issues_count": 348,
-      "watchers_count": 26603,
+      "stargazers_count": 26690,
+      "forks_count": 2482,
+      "open_issues_count": 353,
+      "watchers_count": 26690,
       "language": null,
       "topics": [
         "agent",
@@ -3131,7 +3131,7 @@
         "python"
       ],
       "created_at": "2023-06-19T00:20:06Z",
-      "updated_at": "2026-03-20T12:33:46Z",
+      "updated_at": "2026-03-21T01:39:19Z",
       "pushed_at": "2025-02-26T10:04:45Z",
       "owner": {
         "login": "e2b-dev",
@@ -3149,15 +3149,15 @@
       "full_name": "badlogic/pi-mono",
       "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
       "html_url": "https://github.com/badlogic/pi-mono",
-      "stargazers_count": 26183,
-      "forks_count": 2766,
-      "open_issues_count": 21,
-      "watchers_count": 26183,
+      "stargazers_count": 26374,
+      "forks_count": 2790,
+      "open_issues_count": 19,
+      "watchers_count": 26374,
       "language": "TypeScript",
       "topics": [],
       "created_at": "2025-08-09T14:03:50Z",
-      "updated_at": "2026-03-20T12:31:46Z",
-      "pushed_at": "2026-03-20T11:54:49Z",
+      "updated_at": "2026-03-21T01:36:30Z",
+      "pushed_at": "2026-03-20T19:16:16Z",
       "owner": {
         "login": "badlogic",
         "avatar_url": "https://avatars.githubusercontent.com/u/514052?v=4",
@@ -3169,50 +3169,15 @@
       "fork": false
     },
     {
-      "id": 828268839,
-      "name": "RAG_Techniques",
-      "full_name": "NirDiamant/RAG_Techniques",
-      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses.",
-      "html_url": "https://github.com/NirDiamant/RAG_Techniques",
-      "stargazers_count": 26133,
-      "forks_count": 3090,
-      "open_issues_count": 24,
-      "watchers_count": 26133,
-      "language": "Jupyter Notebook",
-      "topics": [
-        "ai",
-        "langchain",
-        "llama-index",
-        "llm",
-        "llms",
-        "opeani",
-        "python",
-        "rag",
-        "tutorials"
-      ],
-      "created_at": "2024-07-13T16:08:36Z",
-      "updated_at": "2026-03-20T11:33:31Z",
-      "pushed_at": "2026-02-17T20:32:17Z",
-      "owner": {
-        "login": "NirDiamant",
-        "avatar_url": "https://avatars.githubusercontent.com/u/28316913?v=4",
-        "type": "User"
-      },
-      "license": "NOASSERTION",
-      "homepage": "",
-      "archived": false,
-      "fork": false
-    },
-    {
       "id": 575865240,
       "name": "AstrBot",
       "full_name": "AstrBotDevs/AstrBot",
       "description": "Agentic IM Chatbot infrastructure that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
       "html_url": "https://github.com/AstrBotDevs/AstrBot",
-      "stargazers_count": 26130,
-      "forks_count": 1779,
-      "open_issues_count": 893,
-      "watchers_count": 26130,
+      "stargazers_count": 26191,
+      "forks_count": 1787,
+      "open_issues_count": 895,
+      "watchers_count": 26191,
       "language": "Python",
       "topics": [
         "agent",
@@ -3233,8 +3198,8 @@
         "telegram"
       ],
       "created_at": "2022-12-08T13:27:46Z",
-      "updated_at": "2026-03-20T12:33:05Z",
-      "pushed_at": "2026-03-20T12:02:53Z",
+      "updated_at": "2026-03-21T01:40:27Z",
+      "pushed_at": "2026-03-20T21:10:52Z",
       "owner": {
         "login": "AstrBotDevs",
         "avatar_url": "https://avatars.githubusercontent.com/u/197911947?v=4",
@@ -3251,10 +3216,10 @@
       "full_name": "sickn33/antigravity-awesome-skills",
       "description": "Installable GitHub library of 1,273+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
       "html_url": "https://github.com/sickn33/antigravity-awesome-skills",
-      "stargazers_count": 26069,
-      "forks_count": 4449,
+      "stargazers_count": 26190,
+      "forks_count": 4463,
       "open_issues_count": 3,
-      "watchers_count": 26069,
+      "watchers_count": 26190,
       "language": "Python",
       "topics": [
         "agent-skills",
@@ -3279,8 +3244,8 @@
         "skill-library"
       ],
       "created_at": "2026-01-14T17:48:09Z",
-      "updated_at": "2026-03-20T12:20:03Z",
-      "pushed_at": "2026-03-20T09:23:35Z",
+      "updated_at": "2026-03-21T01:42:45Z",
+      "pushed_at": "2026-03-20T17:15:29Z",
       "owner": {
         "login": "sickn33",
         "avatar_url": "https://avatars.githubusercontent.com/u/184072420?v=4",
@@ -3292,15 +3257,50 @@
       "fork": false
     },
     {
+      "id": 828268839,
+      "name": "RAG_Techniques",
+      "full_name": "NirDiamant/RAG_Techniques",
+      "description": "This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses.",
+      "html_url": "https://github.com/NirDiamant/RAG_Techniques",
+      "stargazers_count": 26139,
+      "forks_count": 3091,
+      "open_issues_count": 24,
+      "watchers_count": 26139,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "ai",
+        "langchain",
+        "llama-index",
+        "llm",
+        "llms",
+        "opeani",
+        "python",
+        "rag",
+        "tutorials"
+      ],
+      "created_at": "2024-07-13T16:08:36Z",
+      "updated_at": "2026-03-20T23:52:57Z",
+      "pushed_at": "2026-02-17T20:32:17Z",
+      "owner": {
+        "login": "NirDiamant",
+        "avatar_url": "https://avatars.githubusercontent.com/u/28316913?v=4",
+        "type": "User"
+      },
+      "license": "NOASSERTION",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
       "id": 639835356,
       "name": "gpt-researcher",
       "full_name": "assafelovic/gpt-researcher",
       "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
       "html_url": "https://github.com/assafelovic/gpt-researcher",
-      "stargazers_count": 25860,
-      "forks_count": 3437,
-      "open_issues_count": 174,
-      "watchers_count": 25860,
+      "stargazers_count": 25870,
+      "forks_count": 3444,
+      "open_issues_count": 177,
+      "watchers_count": 25870,
       "language": "Python",
       "topics": [
         "agent",
@@ -3316,7 +3316,7 @@
         "webscraping"
       ],
       "created_at": "2023-05-12T10:33:54Z",
-      "updated_at": "2026-03-20T11:50:19Z",
+      "updated_at": "2026-03-21T01:34:02Z",
       "pushed_at": "2026-03-14T13:16:21Z",
       "owner": {
         "login": "assafelovic",
@@ -3334,10 +3334,10 @@
       "full_name": "Fosowl/agenticSeek",
       "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)",
       "html_url": "https://github.com/Fosowl/agenticSeek",
-      "stargazers_count": 25564,
+      "stargazers_count": 25565,
       "forks_count": 2843,
       "open_issues_count": 34,
-      "watchers_count": 25564,
+      "watchers_count": 25565,
       "language": "Python",
       "topics": [
         "agentic-ai",
@@ -3350,7 +3350,7 @@
         "voice-assistant"
       ],
       "created_at": "2025-02-19T18:03:06Z",
-      "updated_at": "2026-03-20T11:59:35Z",
+      "updated_at": "2026-03-20T20:07:47Z",
       "pushed_at": "2026-03-16T19:02:51Z",
       "owner": {
         "login": "Fosowl",
@@ -3368,10 +3368,10 @@
       "full_name": "mlflow/mlflow",
       "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
       "html_url": "https://github.com/mlflow/mlflow",
-      "stargazers_count": 24862,
+      "stargazers_count": 24871,
       "forks_count": 5452,
-      "open_issues_count": 1987,
-      "watchers_count": 24862,
+      "open_issues_count": 1989,
+      "watchers_count": 24871,
       "language": "Python",
       "topics": [
         "agentops",
@@ -3394,8 +3394,8 @@
         "prompt-engineering"
       ],
       "created_at": "2018-06-05T16:05:58Z",
-      "updated_at": "2026-03-20T12:18:49Z",
-      "pushed_at": "2026-03-20T12:18:47Z",
+      "updated_at": "2026-03-20T20:22:32Z",
+      "pushed_at": "2026-03-20T20:22:29Z",
       "owner": {
         "login": "mlflow",
         "avatar_url": "https://avatars.githubusercontent.com/u/39938107?v=4",
@@ -3407,15 +3407,46 @@
       "fork": false
     },
     {
+      "id": 1146738089,
+      "name": "nanoclaw",
+      "full_name": "qwibitai/nanoclaw",
+      "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+      "html_url": "https://github.com/qwibitai/nanoclaw",
+      "stargazers_count": 24604,
+      "forks_count": 7339,
+      "open_issues_count": 523,
+      "watchers_count": 24604,
+      "language": "TypeScript",
+      "topics": [
+        "ai-agents",
+        "ai-assistant",
+        "claude-code",
+        "claude-skills",
+        "openclaw"
+      ],
+      "created_at": "2026-01-31T15:47:22Z",
+      "updated_at": "2026-03-21T01:42:58Z",
+      "pushed_at": "2026-03-19T22:20:14Z",
+      "owner": {
+        "login": "qwibitai",
+        "avatar_url": "https://avatars.githubusercontent.com/u/255066954?v=4",
+        "type": "Organization"
+      },
+      "license": "MIT",
+      "homepage": "https://nanoclaw.dev",
+      "archived": false,
+      "fork": false
+    },
+    {
       "id": 221654678,
       "name": "haystack",
       "full_name": "deepset-ai/haystack",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
       "html_url": "https://github.com/deepset-ai/haystack",
-      "stargazers_count": 24567,
-      "forks_count": 2668,
-      "open_issues_count": 98,
-      "watchers_count": 24567,
+      "stargazers_count": 24569,
+      "forks_count": 2667,
+      "open_issues_count": 99,
+      "watchers_count": 24569,
       "language": "MDX",
       "topics": [
         "agent",
@@ -3440,8 +3471,8 @@
         "transformers"
       ],
       "created_at": "2019-11-14T09:05:28Z",
-      "updated_at": "2026-03-20T11:44:09Z",
-      "pushed_at": "2026-03-20T11:33:11Z",
+      "updated_at": "2026-03-20T15:26:54Z",
+      "pushed_at": "2026-03-20T17:30:51Z",
       "owner": {
         "login": "deepset-ai",
         "avatar_url": "https://avatars.githubusercontent.com/u/51827949?v=4",
@@ -3453,46 +3484,15 @@
       "fork": false
     },
     {
-      "id": 1146738089,
-      "name": "nanoclaw",
-      "full_name": "qwibitai/nanoclaw",
-      "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
-      "html_url": "https://github.com/qwibitai/nanoclaw",
-      "stargazers_count": 24480,
-      "forks_count": 7197,
-      "open_issues_count": 519,
-      "watchers_count": 24480,
-      "language": "TypeScript",
-      "topics": [
-        "ai-agents",
-        "ai-assistant",
-        "claude-code",
-        "claude-skills",
-        "openclaw"
-      ],
-      "created_at": "2026-01-31T15:47:22Z",
-      "updated_at": "2026-03-20T12:34:51Z",
-      "pushed_at": "2026-03-19T22:20:14Z",
-      "owner": {
-        "login": "qwibitai",
-        "avatar_url": "https://avatars.githubusercontent.com/u/255066954?v=4",
-        "type": "Organization"
-      },
-      "license": "MIT",
-      "homepage": "https://nanoclaw.dev",
-      "archived": false,
-      "fork": false
-    },
-    {
       "id": 205679232,
       "name": "gin-vue-admin",
       "full_name": "flipped-aurora/gin-vue-admin",
       "description": "🚀Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，内置mcp辅助服务，内置skills管理，支持TS和JS混用。它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能。",
       "html_url": "https://github.com/flipped-aurora/gin-vue-admin",
-      "stargazers_count": 24478,
+      "stargazers_count": 24481,
       "forks_count": 7028,
       "open_issues_count": 40,
-      "watchers_count": 24478,
+      "watchers_count": 24481,
       "language": "Go",
       "topics": [
         "admin",
@@ -3517,7 +3517,7 @@
         "vue3"
       ],
       "created_at": "2019-09-01T13:22:35Z",
-      "updated_at": "2026-03-20T11:53:12Z",
+      "updated_at": "2026-03-20T23:39:04Z",
       "pushed_at": "2026-03-10T14:22:11Z",
       "owner": {
         "login": "flipped-aurora",
@@ -3535,17 +3535,17 @@
       "full_name": "zai-org/Open-AutoGLM",
       "description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
       "html_url": "https://github.com/zai-org/Open-AutoGLM",
-      "stargazers_count": 24452,
-      "forks_count": 3857,
+      "stargazers_count": 24460,
+      "forks_count": 3856,
       "open_issues_count": 239,
-      "watchers_count": 24452,
+      "watchers_count": 24460,
       "language": "Python",
       "topics": [
         "agent",
         "phone-use-agent"
       ],
       "created_at": "2025-12-08T09:23:44Z",
-      "updated_at": "2026-03-20T10:29:31Z",
+      "updated_at": "2026-03-21T00:39:39Z",
       "pushed_at": "2026-03-06T08:38:39Z",
       "owner": {
         "login": "zai-org",
@@ -3563,10 +3563,10 @@
       "full_name": "langfuse/langfuse",
       "description": "🪢 Open source LLM engineering platform: LLM Observability, metrics, evals, prompt management, playground, datasets. Integrates with OpenTelemetry, Langchain, OpenAI SDK, LiteLLM, and more. 🍊YC W23 ",
       "html_url": "https://github.com/langfuse/langfuse",
-      "stargazers_count": 23467,
-      "forks_count": 2378,
+      "stargazers_count": 23484,
+      "forks_count": 2377,
       "open_issues_count": 588,
-      "watchers_count": 23467,
+      "watchers_count": 23484,
       "language": "TypeScript",
       "topics": [
         "analytics",
@@ -3590,8 +3590,8 @@
         "ycombinator"
       ],
       "created_at": "2023-05-18T17:47:09Z",
-      "updated_at": "2026-03-20T12:17:38Z",
-      "pushed_at": "2026-03-20T12:19:21Z",
+      "updated_at": "2026-03-21T01:29:39Z",
+      "pushed_at": "2026-03-20T23:04:33Z",
       "owner": {
         "login": "langfuse",
         "avatar_url": "https://avatars.githubusercontent.com/u/134601687?v=4",
@@ -3608,10 +3608,10 @@
       "full_name": "davila7/claude-code-templates",
       "description": "CLI tool for configuring and monitoring Claude Code",
       "html_url": "https://github.com/davila7/claude-code-templates",
-      "stargazers_count": 23261,
-      "forks_count": 2223,
-      "open_issues_count": 116,
-      "watchers_count": 23261,
+      "stargazers_count": 23287,
+      "forks_count": 2229,
+      "open_issues_count": 117,
+      "watchers_count": 23287,
       "language": "Python",
       "topics": [
         "anthropic",
@@ -3620,8 +3620,8 @@
         "claude-code"
       ],
       "created_at": "2025-07-04T01:26:26Z",
-      "updated_at": "2026-03-20T11:53:37Z",
-      "pushed_at": "2026-03-20T03:47:30Z",
+      "updated_at": "2026-03-21T01:24:24Z",
+      "pushed_at": "2026-03-21T01:08:35Z",
       "owner": {
         "login": "davila7",
         "avatar_url": "https://avatars.githubusercontent.com/u/6216945?v=4",
@@ -3638,10 +3638,10 @@
       "full_name": "vanna-ai/vanna",
       "description": "🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using Agentic Retrieval 🔄.",
       "html_url": "https://github.com/vanna-ai/vanna",
-      "stargazers_count": 23032,
-      "forks_count": 2248,
+      "stargazers_count": 23035,
+      "forks_count": 2249,
       "open_issues_count": 286,
-      "watchers_count": 23032,
+      "watchers_count": 23035,
       "language": "Python",
       "topics": [
         "agent",
@@ -3654,7 +3654,7 @@
         "text-to-sql"
       ],
       "created_at": "2023-05-13T17:26:28Z",
-      "updated_at": "2026-03-20T09:41:46Z",
+      "updated_at": "2026-03-20T21:36:34Z",
       "pushed_at": "2026-02-02T14:14:20Z",
       "owner": {
         "login": "vanna-ai",
@@ -3672,10 +3672,10 @@
       "full_name": "vercel/ai",
       "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
       "html_url": "https://github.com/vercel/ai",
-      "stargazers_count": 22830,
-      "forks_count": 4026,
-      "open_issues_count": 1385,
-      "watchers_count": 22830,
+      "stargazers_count": 22844,
+      "forks_count": 4027,
+      "open_issues_count": 1390,
+      "watchers_count": 22844,
       "language": "TypeScript",
       "topics": [
         "anthropic",
@@ -3695,8 +3695,8 @@
         "vue"
       ],
       "created_at": "2023-05-23T15:04:08Z",
-      "updated_at": "2026-03-20T12:31:59Z",
-      "pushed_at": "2026-03-20T03:38:44Z",
+      "updated_at": "2026-03-20T21:53:35Z",
+      "pushed_at": "2026-03-20T23:32:25Z",
       "owner": {
         "login": "vercel",
         "avatar_url": "https://avatars.githubusercontent.com/u/14985020?v=4",
@@ -3713,10 +3713,10 @@
       "full_name": "yamadashy/repomix",
       "description": "📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more.",
       "html_url": "https://github.com/yamadashy/repomix",
-      "stargazers_count": 22549,
-      "forks_count": 1048,
-      "open_issues_count": 148,
-      "watchers_count": 22549,
+      "stargazers_count": 22553,
+      "forks_count": 1049,
+      "open_issues_count": 147,
+      "watchers_count": 22553,
       "language": "TypeScript",
       "topics": [
         "ai",
@@ -3741,8 +3741,8 @@
         "typescript"
       ],
       "created_at": "2024-07-13T07:11:32Z",
-      "updated_at": "2026-03-20T11:33:22Z",
-      "pushed_at": "2026-03-20T05:47:08Z",
+      "updated_at": "2026-03-21T01:18:29Z",
+      "pushed_at": "2026-03-20T16:31:49Z",
       "owner": {
         "login": "yamadashy",
         "avatar_url": "https://avatars.githubusercontent.com/u/5019072?v=4",
@@ -3759,10 +3759,10 @@
       "full_name": "mastra-ai/mastra",
       "description": "From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack.",
       "html_url": "https://github.com/mastra-ai/mastra",
-      "stargazers_count": 22158,
-      "forks_count": 1756,
-      "open_issues_count": 396,
-      "watchers_count": 22158,
+      "stargazers_count": 22175,
+      "forks_count": 1765,
+      "open_issues_count": 392,
+      "watchers_count": 22175,
       "language": "TypeScript",
       "topics": [
         "agents",
@@ -3780,8 +3780,8 @@
         "workflows"
       ],
       "created_at": "2024-08-06T20:44:31Z",
-      "updated_at": "2026-03-20T12:16:57Z",
-      "pushed_at": "2026-03-20T12:30:16Z",
+      "updated_at": "2026-03-21T01:23:40Z",
+      "pushed_at": "2026-03-21T00:55:10Z",
       "owner": {
         "login": "mastra-ai",
         "avatar_url": "https://avatars.githubusercontent.com/u/149120496?v=4",
@@ -3798,10 +3798,10 @@
       "full_name": "ruvnet/ruflo",
       "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
       "html_url": "https://github.com/ruvnet/ruflo",
-      "stargazers_count": 22071,
-      "forks_count": 2404,
-      "open_issues_count": 379,
-      "watchers_count": 22071,
+      "stargazers_count": 22143,
+      "forks_count": 2412,
+      "open_issues_count": 377,
+      "watchers_count": 22143,
       "language": "TypeScript",
       "topics": [
         "agentic-ai",
@@ -3826,8 +3826,8 @@
         "swarm-intelligence"
       ],
       "created_at": "2025-06-02T21:24:20Z",
-      "updated_at": "2026-03-20T12:29:22Z",
-      "pushed_at": "2026-03-19T15:49:55Z",
+      "updated_at": "2026-03-21T01:42:31Z",
+      "pushed_at": "2026-03-20T15:42:06Z",
       "owner": {
         "login": "ruvnet",
         "avatar_url": "https://avatars.githubusercontent.com/u/2934394?v=4",
